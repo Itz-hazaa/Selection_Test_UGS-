@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Selection Test</title>
+<title>Umeed Global School</title>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -20,372 +20,176 @@
   --line:#E8E2FB;
   --display:'Baloo 2', system-ui, sans-serif;
   --body:'Inter', system-ui, sans-serif;
-  --radius:18px;
   --shadow: 0 6px 0 rgba(34,28,70,0.08), 0 10px 24px rgba(59,47,140,0.10);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  font-family:var(--body);
-  background:var(--cream);
-  color:var(--ink);
-  font-size:16px;
-  line-height:1.6;
-  min-height:100vh;
-}
+body{font-family:var(--body);background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6;min-height:100vh;}
 
-/* ── HEADER ── */
-.site-header{
-  background:var(--indigo);
-  position:sticky; top:0; z-index:100;
-  border-bottom:4px solid var(--violet);
-}
-.header-inner{
-  max-width:880px; margin:0 auto; padding:0 1.25rem;
-  display:flex; align-items:center; justify-content:space-between; height:64px;
-}
-.header-brand{display:flex; align-items:center; gap:10px;}
-.brand-mark{
-  width:38px; height:38px; background:var(--yellow);
-  border-radius:12px; transform:rotate(-6deg);
-  display:flex; align-items:center; justify-content:center;
-  font-family:var(--display); font-weight:800; color:var(--indigo-deep); font-size:14px;
-  box-shadow:0 3px 0 rgba(0,0,0,0.12);
-}
-.brand-text{color:#fff; font-family:var(--display); font-weight:700; font-size:16px; letter-spacing:0.2px;}
-.brand-sub{color:rgba(255,255,255,0.55); font-size:11px; font-weight:500;}
-.header-timer{
-  display:flex; align-items:center; gap:8px;
-  background:rgba(255,255,255,0.1); border:2px solid rgba(255,255,255,0.18);
-  border-radius:14px; padding:6px 14px;
-}
-.timer-label{color:rgba(255,255,255,0.5); font-size:10px; text-transform:uppercase; letter-spacing:1.5px; font-weight:700;}
-.timer-display{color:var(--yellow); font-size:20px; font-weight:800; font-family:var(--display); letter-spacing:1px;}
+/* HEADER */
+.site-header{background:var(--indigo);position:sticky;top:0;z-index:100;border-bottom:4px solid var(--violet);}
+.header-inner{max-width:880px;margin:0 auto;padding:0 1.25rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.header-brand{display:flex;align-items:center;gap:10px;}
+.brand-mark{width:38px;height:38px;background:var(--yellow);border-radius:12px;transform:rotate(-6deg);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:800;color:var(--indigo-deep);font-size:12px;box-shadow:0 3px 0 rgba(0,0,0,0.12);}
+.brand-text{color:#fff;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:0.2px;}
+.brand-sub{color:rgba(255,255,255,0.55);font-size:11px;font-weight:500;}
+.header-timer{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.18);border-radius:14px;padding:6px 14px;}
+.timer-label{color:rgba(255,255,255,0.5);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;}
+.timer-display{color:var(--yellow);font-size:20px;font-weight:800;font-family:var(--display);letter-spacing:1px;}
 .timer-display.warning{color:var(--yellow);}
-.timer-display.danger{color:var(--coral); animation:pulse 1s infinite;}
+.timer-display.danger{color:var(--coral);animation:pulse 1s infinite;}
 @keyframes pulse{0%,100%{opacity:1} 50%{opacity:0.55}}
 
-/* ── COVER SCREEN ── */
-#cover-screen{
-  min-height:calc(100vh - 64px);
-  display:flex; align-items:flex-start; justify-content:center;
-  padding:2.5rem 1.25rem;
-}
-.cover-wrap{max-width:620px; width:100%;}
-.cover-card{
-  background:var(--card); border-radius:28px; overflow:hidden;
-  box-shadow:var(--shadow); border:3px solid var(--ink);
-}
-.cover-header{
-  background:var(--violet);
-  padding:2.25rem 2rem; position:relative; overflow:hidden;
-  border-bottom:3px solid var(--ink);
-}
-.cover-header::before{
-  content:''; position:absolute; top:-50px; right:-50px;
-  width:180px; height:180px; background:var(--yellow);
-  border-radius:50%; opacity:0.35;
-}
-.cover-header::after{
-  content:''; position:absolute; bottom:-40px; left:-30px;
-  width:120px; height:120px; background:var(--coral);
-  border-radius:50%; opacity:0.3;
-}
-.cover-pill{
-  display:inline-flex; align-items:center; gap:6px;
-  background:var(--yellow); color:var(--indigo-deep);
-  font-family:var(--display); font-size:11px; font-weight:700;
-  letter-spacing:1px; text-transform:uppercase;
-  padding:5px 12px; border-radius:20px; margin-bottom:0.85rem;
-  border:2px solid var(--ink); position:relative; z-index:1;
-}
-.cover-title{
-  color:#fff; font-family:var(--display); font-size:30px; font-weight:800;
-  letter-spacing:-0.5px; line-height:1.15; margin-bottom:6px; position:relative; z-index:1;
-}
-.cover-subtitle{color:rgba(255,255,255,0.75); font-size:13px; position:relative; z-index:1; font-weight:500;}
+/* COVER */
+#cover-screen{min-height:calc(100vh - 64px);display:flex;align-items:flex-start;justify-content:center;padding:2.5rem 1.25rem;}
+.cover-wrap{max-width:640px;width:100%;}
+.cover-card{background:var(--card);border-radius:28px;overflow:hidden;box-shadow:var(--shadow);border:3px solid var(--ink);}
+.cover-header{background:var(--violet);padding:2.25rem 2rem;position:relative;overflow:hidden;border-bottom:3px solid var(--ink);}
+.cover-header::before{content:'';position:absolute;top:-50px;right:-50px;width:180px;height:180px;background:var(--yellow);border-radius:50%;opacity:0.35;}
+.cover-header::after{content:'';position:absolute;bottom:-40px;left:-30px;width:120px;height:120px;background:var(--coral);border-radius:50%;opacity:0.3;}
+.cover-pill{display:inline-flex;align-items:center;gap:6px;background:var(--yellow);color:var(--indigo-deep);font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:0.85rem;border:2px solid var(--ink);position:relative;z-index:1;}
+.cover-title{color:#fff;font-family:var(--display);font-size:28px;font-weight:800;letter-spacing:-0.5px;line-height:1.2;margin-bottom:6px;position:relative;z-index:1;}
+.cover-subtitle{color:rgba(255,255,255,0.75);font-size:13px;position:relative;z-index:1;font-weight:500;}
 .cover-body{padding:1.75rem 2rem 2rem;}
-
-.cover-stats{
-  display:grid; grid-template-columns:repeat(3,1fr); gap:10px;
-  margin-bottom:1.5rem;
-}
-.stat-box{
-  background:var(--cream); border:2px solid var(--ink); border-radius:14px;
-  padding:14px 8px; text-align:center;
-}
-.stat-box .val{display:block; font-family:var(--display); font-size:26px; font-weight:800; color:var(--violet);}
-.stat-box .lbl{display:block; font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:0.6px; margin-top:2px; font-weight:700;}
-
-.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:1.5rem;}
-.form-field label{display:block; font-size:11px; font-weight:700; color:var(--indigo); text-transform:uppercase; letter-spacing:0.6px; margin-bottom:5px; font-family:var(--display);}
-.form-field input{
-  width:100%; border:2px solid var(--line); border-radius:12px;
-  padding:11px 13px; font-size:14px; font-family:var(--body); color:var(--ink);
-  background:var(--cream); transition:border-color 0.15s, box-shadow 0.15s; outline:none;
-}
-.form-field input:focus{border-color:var(--violet); background:#fff; box-shadow:0 0 0 3px rgba(124,92,252,0.18);}
-.form-field.full{grid-column:1/-1}
-
-.notice-box{
-  background:#EAFBF3; border:2px solid var(--mint); border-radius:14px;
-  padding:0.9rem 1.1rem; margin-bottom:1.25rem; display:flex; gap:10px; align-items:flex-start;
-}
-.notice-icon{font-size:18px; flex-shrink:0; margin-top:1px;}
-.notice-body p{font-size:12.5px; color:#0F8C5E; line-height:1.5; font-weight:500;}
+.cover-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.5rem;}
+.stat-box{background:var(--cream);border:2px solid var(--ink);border-radius:14px;padding:14px 8px;text-align:center;}
+.stat-box .val{display:block;font-family:var(--display);font-size:24px;font-weight:800;color:var(--violet);}
+.stat-box .lbl{display:block;font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-top:2px;font-weight:700;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.5rem;}
+.form-field label{display:block;font-size:11px;font-weight:700;color:var(--indigo);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:5px;font-family:var(--display);}
+.form-field input{width:100%;border:2px solid var(--line);border-radius:12px;padding:11px 13px;font-size:14px;font-family:var(--body);color:var(--ink);background:var(--cream);transition:border-color 0.15s,box-shadow 0.15s;outline:none;}
+.form-field input:focus{border-color:var(--violet);background:#fff;box-shadow:0 0 0 3px rgba(124,92,252,0.18);}
+.notice-box{background:#EAFBF3;border:2px solid var(--mint);border-radius:14px;padding:0.9rem 1.1rem;margin-bottom:1.25rem;display:flex;gap:10px;align-items:flex-start;}
+.notice-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
+.notice-body p{font-size:12.5px;color:#0F8C5E;line-height:1.5;font-weight:500;}
 .notice-body strong{font-weight:800;}
-
-.instr-box{
-  background:#F1EEFF; border:2px solid var(--violet); border-radius:14px;
-  padding:1rem 1.25rem; margin-bottom:1.5rem;
-}
-.instr-box h3{font-family:var(--display); font-size:13px; font-weight:700; color:var(--indigo); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:8px;}
+.instr-box{background:#F1EEFF;border:2px solid var(--violet);border-radius:14px;padding:1rem 1.25rem;margin-bottom:1.5rem;}
+.instr-box h3{font-family:var(--display);font-size:13px;font-weight:700;color:var(--indigo);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:8px;}
 .instr-box ol{padding-left:1.2rem;}
-.instr-box li{font-size:13px; color:#4A4470; margin-bottom:4px; line-height:1.5; font-weight:500;}
+.instr-box li{font-size:13px;color:#4A4470;margin-bottom:4px;line-height:1.5;font-weight:500;}
+.section-overview{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:1.5rem;}
+.so-item{background:var(--cream);border:2px solid var(--line);border-radius:12px;padding:8px 12px;font-size:12px;font-weight:600;color:var(--indigo);}
+.so-item b{font-family:var(--display);color:var(--violet);}
+.btn-start{display:block;width:100%;background:var(--yellow);color:var(--indigo-deep);border:3px solid var(--ink);border-radius:16px;padding:15px;font-size:16px;font-weight:800;letter-spacing:0.3px;cursor:pointer;font-family:var(--display);box-shadow:0 5px 0 var(--ink);transition:transform 0.08s,box-shadow 0.08s;}
+.btn-start:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--ink);}
+.btn-start:active{transform:translateY(5px);box-shadow:0 0 0 var(--ink);}
 
-.btn-start{
-  display:block; width:100%; background:var(--yellow); color:var(--indigo-deep);
-  border:3px solid var(--ink); border-radius:16px; padding:15px;
-  font-size:16px; font-weight:800; letter-spacing:0.3px; cursor:pointer;
-  font-family:var(--display);
-  box-shadow:0 5px 0 var(--ink);
-  transition:transform 0.08s, box-shadow 0.08s;
-}
-.btn-start:hover{transform:translateY(2px); box-shadow:0 3px 0 var(--ink);}
-.btn-start:active{transform:translateY(5px); box-shadow:0 0 0 var(--ink);}
-
-/* ── EXAM SCREEN ── */
+/* EXAM */
 #exam-screen{display:none;}
-.exam-layout{
-  max-width:880px; margin:0 auto; padding:1.5rem 1.25rem 6rem;
-}
+.exam-layout{max-width:880px;margin:0 auto;padding:1.5rem 1.25rem 6rem;}
+.progress-card{background:var(--card);border:3px solid var(--ink);border-radius:18px;padding:1rem 1.25rem;margin-bottom:1.25rem;box-shadow:var(--shadow);position:sticky;top:80px;z-index:50;}
+.progress-info{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+.progress-info span{font-size:12px;color:var(--muted);font-weight:600;font-family:var(--display);}
+.progress-info strong{font-size:13px;font-weight:800;color:var(--violet);font-family:var(--display);}
+.progress-track{height:12px;background:var(--line);border-radius:8px;overflow:hidden;border:2px solid var(--ink);}
+.progress-fill{height:100%;background:repeating-linear-gradient(45deg,var(--mint),var(--mint) 10px,#34c98a 10px,#34c98a 20px);border-radius:6px;transition:width 0.35s ease;}
 
-/* PROGRESS */
-.progress-card{
-  background:var(--card); border:3px solid var(--ink); border-radius:18px;
-  padding:1rem 1.25rem; margin-bottom:1.25rem; box-shadow:var(--shadow);
-  position:sticky; top:80px; z-index:50;
-}
-.progress-info{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;}
-.progress-info span{font-size:12px; color:var(--muted); font-weight:600; font-family:var(--display);}
-.progress-info strong{font-size:13px; font-weight:800; color:var(--violet); font-family:var(--display);}
-.progress-track{height:12px; background:var(--line); border-radius:8px; overflow:hidden; border:2px solid var(--ink);}
-.progress-fill{
-  height:100%; background:repeating-linear-gradient(45deg, var(--mint), var(--mint) 10px, #34c98a 10px, #34c98a 20px);
-  border-radius:6px; transition:width 0.35s ease;
-}
+.section-divider{background:var(--indigo);color:#fff;border-radius:18px;padding:1.1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:1.25rem;border:3px solid var(--ink);box-shadow:var(--shadow);flex-wrap:wrap;}
+.section-divider h2{font-family:var(--display);font-size:15px;font-weight:700;letter-spacing:0.2px;}
+.section-badge{background:var(--yellow);color:var(--indigo-deep);font-family:var(--display);font-size:12px;font-weight:800;padding:5px 12px;border-radius:20px;border:2px solid var(--ink);white-space:nowrap;}
 
-/* SECTION DIVIDER */
-.section-divider{
-  background:var(--indigo); color:#fff; border-radius:18px;
-  padding:1.1rem 1.4rem; display:flex; align-items:center; justify-content:space-between;
-  margin-bottom:1.25rem; border:3px solid var(--ink);
-  box-shadow:var(--shadow);
-}
-.section-divider h2{font-family:var(--display); font-size:16px; font-weight:700; letter-spacing:0.2px;}
-.section-badge{
-  background:var(--yellow); color:var(--indigo-deep); font-family:var(--display);
-  font-size:12px; font-weight:800; padding:5px 12px; border-radius:20px; border:2px solid var(--ink);
-}
-
-/* QUESTION CARDS */
-.question-card{
-  background:var(--card); border:3px solid var(--ink); border-radius:18px;
-  overflow:hidden; margin-bottom:1.25rem; box-shadow:var(--shadow);
-}
-.q-header{
-  background:var(--violet); border-bottom:3px solid var(--ink);
-  padding:1rem 1.4rem; display:flex; align-items:center; gap:14px;
-}
-.q-number{
-  flex-shrink:0; width:42px; height:42px; background:var(--yellow);
-  color:var(--indigo-deep); border-radius:50%; border:3px solid var(--ink);
-  display:flex; align-items:center; justify-content:center;
-  font-family:var(--display); font-size:17px; font-weight:800;
-  transform:rotate(-6deg);
-}
+.question-card{background:var(--card);border:3px solid var(--ink);border-radius:18px;overflow:hidden;margin-bottom:1.25rem;box-shadow:var(--shadow);}
+.q-header{background:var(--violet);border-bottom:3px solid var(--ink);padding:1rem 1.4rem;display:flex;align-items:center;gap:14px;}
+.q-number{flex-shrink:0;width:42px;height:42px;background:var(--yellow);color:var(--indigo-deep);border-radius:50%;border:3px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:15px;font-weight:800;transform:rotate(-6deg);}
 .q-meta{flex:1;}
-.q-title{font-family:var(--display); font-size:15px; font-weight:700; color:#fff; line-height:1.4;}
-.q-marks{font-size:12px; color:rgba(255,255,255,0.75); font-weight:600; margin-top:1px;}
+.q-title{font-family:var(--display);font-size:15px;font-weight:700;color:#fff;line-height:1.4;}
+.q-marks{font-size:12px;color:rgba(255,255,255,0.75);font-weight:600;margin-top:1px;}
 .q-body{padding:1.3rem 1.4rem;}
-.q-text{font-size:15px; color:var(--ink); line-height:1.65; margin-bottom:1.25rem;}
+.q-text{font-size:15px;color:var(--ink);line-height:1.65;margin-bottom:1.25rem;}
 .q-text strong{color:var(--violet);}
 
-/* MCQ */
-.mcq-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
-.mcq-option{
-  display:flex; align-items:center; gap:10px; border:2.5px solid var(--line);
-  border-radius:14px; padding:11px 14px; cursor:pointer; transition:all 0.12s;
-  background:var(--cream); user-select:none;
-}
-.mcq-option:hover{border-color:var(--violet); background:#F1EEFF; transform:translateY(-1px);}
-.mcq-option.selected{border-color:var(--violet); background:#F1EEFF; box-shadow:0 3px 0 var(--violet);}
-.opt-indicator{
-  width:28px; height:28px; border-radius:50%; border:2.5px solid var(--line);
-  display:flex; align-items:center; justify-content:center; flex-shrink:0;
-  font-size:12px; font-weight:800; color:var(--muted); transition:all 0.12s; font-family:var(--display);
-  background:#fff;
-}
-.mcq-option.selected .opt-indicator{background:var(--violet); border-color:var(--violet); color:#fff;}
-.opt-text{font-size:14px; color:var(--ink); line-height:1.4; font-weight:500;}
-.mcq-sub{border:2px solid var(--line); border-radius:14px; padding:1rem 1.1rem; margin-bottom:1rem; background:#FBFAFF;}
-.mcq-sub:last-child{margin-bottom:0;}
-.sub-q-text{font-size:14px; font-weight:700; color:var(--indigo); margin-bottom:0.75rem; line-height:1.4; font-family:var(--display);}
+/* TRUE/FALSE & MCQ */
+.tf-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:320px;}
+.mcq-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.mcq-option{display:flex;align-items:center;gap:10px;border:2.5px solid var(--line);border-radius:14px;padding:11px 14px;cursor:pointer;transition:all 0.12s;background:var(--cream);user-select:none;}
+.mcq-option:hover{border-color:var(--violet);background:#F1EEFF;transform:translateY(-1px);}
+.mcq-option.selected{border-color:var(--violet);background:#F1EEFF;box-shadow:0 3px 0 var(--violet);}
+.opt-indicator{width:28px;height:28px;border-radius:50%;border:2.5px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;font-weight:800;color:var(--muted);transition:all 0.12s;font-family:var(--display);background:#fff;}
+.mcq-option.selected .opt-indicator{background:var(--violet);border-color:var(--violet);color:#fff;}
+.opt-text{font-size:14px;color:var(--ink);line-height:1.4;font-weight:500;}
+.mcq-sub,.tf-sub{border:2px solid var(--line);border-radius:14px;padding:1rem 1.1rem;margin-bottom:1rem;background:#FBFAFF;}
+.mcq-sub:last-child,.tf-sub:last-child{margin-bottom:0;}
+.sub-q-text{font-size:14px;font-weight:700;color:var(--indigo);margin-bottom:0.75rem;line-height:1.4;font-family:var(--display);}
 
 /* TEXTAREA */
-.answer-textarea{
-  width:100%; min-height:160px; border:2.5px solid var(--line); border-radius:14px;
-  padding:14px 16px; font-size:14px; font-family:var(--body); color:var(--ink);
-  line-height:1.65; resize:vertical; background:var(--cream);
-  transition:border-color 0.15s, box-shadow 0.15s; outline:none;
-}
-.answer-textarea:focus{border-color:var(--violet); background:#fff; box-shadow:0 0 0 3px rgba(124,92,252,0.15);}
-.word-count{text-align:right; font-size:12px; color:var(--muted); margin-top:6px; font-weight:600;}
+.answer-textarea{width:100%;min-height:140px;border:2.5px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14px;font-family:var(--body);color:var(--ink);line-height:1.65;resize:vertical;background:var(--cream);transition:border-color 0.15s,box-shadow 0.15s;outline:none;}
+.answer-textarea:focus{border-color:var(--violet);background:#fff;box-shadow:0 0 0 3px rgba(124,92,252,0.15);}
+.word-count{text-align:right;font-size:12px;color:var(--muted);margin-top:6px;font-weight:600;}
 .word-count.low{color:var(--coral);}
-.word-count.good{color:var(--mint); }
+.word-count.good{color:var(--mint);}
+.sub-part{margin-bottom:1rem;}
+.sub-part:last-child{margin-bottom:0;}
+.sub-part-label{font-size:13px;font-weight:800;color:var(--indigo);margin-bottom:6px;font-family:var(--display);}
 
-/* SUBMIT BUTTON (fixed bottom) */
-.submit-bar{
-  position:fixed; bottom:0; left:0; right:0;
-  background:var(--card); border-top:3px solid var(--ink);
-  padding:14px 1.25rem; text-align:center; z-index:100;
-}
-.btn-submit{
-  display:inline-block; width:100%; max-width:880px;
-  background:var(--coral); color:#fff; border:3px solid var(--ink); border-radius:16px;
-  padding:14px; font-size:15px; font-weight:800; letter-spacing:0.3px; cursor:pointer;
-  font-family:var(--display); box-shadow:0 5px 0 var(--ink);
-  transition:transform 0.08s, box-shadow 0.08s;
-}
-.btn-submit:hover{transform:translateY(2px); box-shadow:0 3px 0 var(--ink);}
+/* SUBMIT BAR */
+.submit-bar{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:3px solid var(--ink);padding:14px 1.25rem;text-align:center;z-index:100;}
+.btn-submit{display:inline-block;width:100%;max-width:880px;background:var(--coral);color:#fff;border:3px solid var(--ink);border-radius:16px;padding:14px;font-size:15px;font-weight:800;letter-spacing:0.3px;cursor:pointer;font-family:var(--display);box-shadow:0 5px 0 var(--ink);transition:transform 0.08s,box-shadow 0.08s;}
+.btn-submit:hover{transform:translateY(2px);box-shadow:0 3px 0 var(--ink);}
 
-/* ── RESULTS SCREEN ── */
-#results-screen{display:none; padding:2rem 1.25rem 3rem;}
-.results-inner{max-width:760px; margin:0 auto;}
-.results-hero{
-  background:var(--indigo); color:#fff; border-radius:24px;
-  padding:2.5rem 2rem; text-align:center; margin-bottom:1.5rem;
-  position:relative; overflow:hidden; border:3px solid var(--ink); box-shadow:var(--shadow);
-}
-.results-hero::before{
-  content:''; position:absolute; top:-40px; right:-40px; width:160px; height:160px;
-  background:var(--yellow); border-radius:50%; opacity:0.25;
-}
-.results-hero::after{
-  content:''; position:absolute; bottom:-50px; left:-30px; width:140px; height:140px;
-  background:var(--mint); border-radius:50%; opacity:0.25;
-}
-.res-eyebrow{font-family:var(--display); font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--yellow); margin-bottom:0.75rem; position:relative; z-index:1;}
-.score-display{font-family:var(--display); font-size:64px; font-weight:800; letter-spacing:-2px; line-height:1; position:relative; z-index:1;}
-.score-denom{font-size:22px; color:rgba(255,255,255,0.45); font-weight:600; letter-spacing:0;}
-.score-label{font-size:13px; color:rgba(255,255,255,0.7); margin-top:0.5rem; font-weight:600; position:relative; z-index:1;}
+/* RESULTS */
+#results-screen{display:none;padding:2rem 1.25rem 3rem;}
+.results-inner{max-width:760px;margin:0 auto;}
+.results-hero{background:var(--indigo);color:#fff;border-radius:24px;padding:2.5rem 2rem;text-align:center;margin-bottom:1.5rem;position:relative;overflow:hidden;border:3px solid var(--ink);box-shadow:var(--shadow);}
+.results-hero::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:var(--yellow);border-radius:50%;opacity:0.25;}
+.results-hero::after{content:'';position:absolute;bottom:-50px;left:-30px;width:140px;height:140px;background:var(--mint);border-radius:50%;opacity:0.25;}
+.res-eyebrow{font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--yellow);margin-bottom:0.75rem;position:relative;z-index:1;}
+.score-display{font-family:var(--display);font-size:60px;font-weight:800;letter-spacing:-2px;line-height:1;position:relative;z-index:1;}
+.score-denom{font-size:22px;color:rgba(255,255,255,0.45);font-weight:600;letter-spacing:0;}
+.score-label{font-size:13px;color:rgba(255,255,255,0.7);margin-top:0.5rem;font-weight:600;position:relative;z-index:1;}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0.6rem;margin-bottom:1.5rem;}
+.result-stat{background:var(--card);border:3px solid var(--ink);border-radius:14px;padding:0.85rem 0.5rem;text-align:center;box-shadow:var(--shadow);}
+.result-stat .r-val{font-family:var(--display);font-size:19px;font-weight:800;color:var(--violet);letter-spacing:-1px;display:block;margin-bottom:2px;}
+.result-stat .r-lbl{font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:0.4px;font-weight:700;font-family:var(--display);}
+.sheets-result-box{display:flex;align-items:center;gap:10px;background:#EAFBF3;border:2px solid var(--mint);border-radius:14px;padding:12px 16px;margin-bottom:1.5rem;font-size:13px;color:#0F5C3A;font-weight:600;}
+.sheets-result-box.error{background:#FFEFED;border-color:var(--coral);color:#A01200;}
+.sheets-result-box.pending{background:#FFF8E1;border-color:var(--yellow);color:#8A6A10;}
 
-.results-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-bottom:1.5rem;}
-.result-stat{
-  background:var(--card); border:3px solid var(--ink); border-radius:16px;
-  padding:1.1rem; text-align:center; box-shadow:var(--shadow);
-}
-.result-stat .r-val{font-family:var(--display); font-size:26px; font-weight:800; color:var(--violet); letter-spacing:-1px; display:block; margin-bottom:4px;}
-.result-stat .r-lbl{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.5px; font-weight:700; font-family:var(--display);}
-
-.sheets-result-box{
-  display:flex; align-items:center; gap:10px; background:#EAFBF3; border:2px solid var(--mint);
-  border-radius:14px; padding:12px 16px; margin-bottom:1.5rem; font-size:13px; color:#0F5C3A; font-weight:600;
-}
-.sheets-result-box.error{background:#FFEFED; border-color:var(--coral); color:#A01200;}
-.sheets-result-box.pending{background:#FFF8E1; border-color:var(--yellow); color:#8A6A10;}
-
-/* MARKS TABLE */
-.marks-table-section{
-  background:#FFF8E1; border:3px solid var(--yellow); border-radius:18px;
-  padding:1.25rem 1.5rem; margin-bottom:1.5rem;
-}
-.marks-table-section h3{font-family:var(--display); font-size:13px; font-weight:800; color:#8A6A10; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:4px;}
-.marks-table-section p{font-size:12px; color:#A0801A; margin-bottom:1rem; font-weight:500;}
-.marks-table{width:100%; border-collapse:separate; border-spacing:0 6px; font-size:13px;}
-.marks-table th{background:var(--indigo); color:#fff; padding:8px 12px; text-align:left; font-size:10px; text-transform:uppercase; letter-spacing:0.6px; font-weight:700; font-family:var(--display);}
+.marks-table-section{background:#FFF8E1;border:3px solid var(--yellow);border-radius:18px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;}
+.marks-table-section h3{font-family:var(--display);font-size:13px;font-weight:800;color:#8A6A10;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:4px;}
+.marks-table-section p{font-size:12px;color:#A0801A;margin-bottom:1rem;font-weight:500;}
+.marks-table{width:100%;border-collapse:separate;border-spacing:0 6px;font-size:13px;}
+.marks-table th{background:var(--indigo);color:#fff;padding:8px 12px;text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:0.6px;font-weight:700;font-family:var(--display);}
 .marks-table th:first-child{border-radius:10px 0 0 10px;}
-.marks-table th:last-child{text-align:center; border-radius:0 10px 10px 0;}
-.marks-table td{padding:9px 12px; background:#fff; border-top:2px solid var(--line); border-bottom:2px solid var(--line); vertical-align:middle;}
-.marks-table td:first-child{border-left:2px solid var(--line); border-radius:10px 0 0 10px;}
-.marks-table td:last-child{border-right:2px solid var(--line); border-radius:0 10px 10px 0; text-align:center;}
-.marks-table .cat-label{font-weight:800; color:var(--violet); font-family:var(--display); font-size:13px;}
-.marks-table .max-label{color:var(--muted); font-size:12px; font-weight:600;}
-.marks-input{
-  width:70px; border:2px solid var(--yellow); border-radius:8px; padding:6px 8px;
-  font-size:14px; font-weight:800; color:var(--indigo); text-align:center;
-  font-family:var(--display); background:#fff; outline:none; transition:border-color 0.15s;
-}
-.marks-input:focus{border-color:var(--violet); box-shadow:0 0 0 2px rgba(124,92,252,0.15);}
-.marks-total-row td{font-weight:800; color:var(--indigo); background:#FFF3CC;}
-.btn-apply-marks{
-  background:var(--violet); color:#fff; border:3px solid var(--ink); border-radius:14px;
-  padding:11px 24px; font-size:13px; font-weight:800; cursor:pointer; font-family:var(--display);
-  margin-top:1rem; box-shadow:0 4px 0 var(--ink); transition:transform 0.08s, box-shadow 0.08s; letter-spacing:0.3px;
-}
-.btn-apply-marks:hover{transform:translateY(2px); box-shadow:0 2px 0 var(--ink);}
+.marks-table th:last-child{text-align:center;border-radius:0 10px 10px 0;}
+.marks-table td{padding:9px 12px;background:#fff;border-top:2px solid var(--line);border-bottom:2px solid var(--line);vertical-align:middle;}
+.marks-table td:first-child{border-left:2px solid var(--line);border-radius:10px 0 0 10px;}
+.marks-table td:last-child{border-right:2px solid var(--line);border-radius:0 10px 10px 0;text-align:center;}
+.marks-table .cat-label{font-weight:800;color:var(--violet);font-family:var(--display);font-size:13px;}
+.marks-table .max-label{color:var(--muted);font-size:12px;font-weight:600;}
+.marks-input{width:60px;border:2px solid var(--yellow);border-radius:8px;padding:6px 8px;font-size:14px;font-weight:800;color:var(--indigo);text-align:center;font-family:var(--display);background:#fff;outline:none;transition:border-color 0.15s;}
+.marks-input:focus{border-color:var(--violet);box-shadow:0 0 0 2px rgba(124,92,252,0.15);}
+.marks-total-row td{font-weight:800;color:var(--indigo);background:#FFF3CC;}
+.btn-apply-marks{background:var(--violet);color:#fff;border:3px solid var(--ink);border-radius:14px;padding:11px 24px;font-size:13px;font-weight:800;cursor:pointer;font-family:var(--display);margin-top:1rem;box-shadow:0 4px 0 var(--ink);transition:transform 0.08s,box-shadow 0.08s;letter-spacing:0.3px;}
+.btn-apply-marks:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--ink);}
 
-/* REVIEW */
 .review-section{margin-bottom:1.5rem;}
-.review-section-title{
-  font-family:var(--display); font-size:14px; font-weight:800; color:var(--indigo);
-  text-transform:uppercase; letter-spacing:0.8px; margin-bottom:1rem; padding-bottom:8px;
-  border-bottom:3px solid var(--violet);
-}
-.review-item{
-  background:var(--card); border:2.5px solid var(--line); border-radius:14px;
-  padding:1rem 1.25rem; margin-bottom:8px; display:flex; align-items:flex-start; gap:12px;
-}
-.review-status{
-  flex-shrink:0; width:30px; height:30px; border-radius:50%; display:flex;
-  align-items:center; justify-content:center; font-size:13px; font-weight:800; border:2px solid;
-}
-.review-status.correct{background:#EAFBF3; color:#0F8C5E; border-color:var(--mint);}
-.review-status.wrong{background:#FFEFED; color:#C0391F; border-color:var(--coral);}
-.review-status.skip{background:#F1EEFF; color:var(--muted); border-color:var(--line);}
+.review-section-title{font-family:var(--display);font-size:14px;font-weight:800;color:var(--indigo);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:1rem;padding-bottom:8px;border-bottom:3px solid var(--violet);}
+.review-item{background:var(--card);border:2.5px solid var(--line);border-radius:14px;padding:1rem 1.25rem;margin-bottom:8px;display:flex;align-items:flex-start;gap:12px;}
+.review-status{flex-shrink:0;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;border:2px solid;}
+.review-status.correct{background:#EAFBF3;color:#0F8C5E;border-color:var(--mint);}
+.review-status.wrong{background:#FFEFED;color:#C0391F;border-color:var(--coral);}
+.review-status.skip{background:#F1EEFF;color:var(--muted);border-color:var(--line);}
 .review-item-text{flex:1;}
-.review-item-text p{font-size:13px; color:var(--ink); line-height:1.4; font-weight:500;}
-.review-item-text .answer-info{margin-top:4px; font-size:12px; color:var(--muted); font-weight:600;}
+.review-item-text p{font-size:13px;color:var(--ink);line-height:1.4;font-weight:500;}
+.review-item-text .answer-info{margin-top:4px;font-size:12px;color:var(--muted);font-weight:600;}
 
-/* EVALUATOR */
-.evaluator-section{
-  background:#F1EEFF; border:3px solid var(--violet); border-radius:18px;
-  padding:1.25rem 1.5rem; margin-bottom:1.5rem;
-}
-.evaluator-section h3{font-family:var(--display); font-size:13px; font-weight:800; color:var(--indigo); text-transform:uppercase; letter-spacing:0.8px; margin-bottom:1rem;}
-.eval-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
-.eval-item label{display:block; font-size:11px; font-weight:700; color:var(--violet); margin-bottom:4px; text-transform:uppercase; letter-spacing:0.5px; font-family:var(--display);}
-.eval-select,.eval-textarea-small{
-  width:100%; border:2px solid var(--line); border-radius:10px; padding:8px 11px;
-  font-size:13px; font-family:var(--body); background:#fff; color:var(--ink); outline:none; transition:border-color 0.15s;
-}
-.eval-select:focus,.eval-textarea-small:focus{border-color:var(--violet);}
-.eval-textarea-small{min-height:60px; resize:vertical;}
-.eval-item.full{grid-column:1/-1;}
-
-/* ACTION BUTTONS */
-.action-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:1.5rem; padding-top:1.5rem; border-top:3px solid var(--line);}
-.btn-action{
-  display:inline-flex; align-items:center; gap:7px; border:3px solid var(--ink); border-radius:14px;
-  padding:11px 20px; font-size:13px; font-weight:800; cursor:pointer; font-family:var(--display);
-  letter-spacing:0.2px; box-shadow:0 4px 0 var(--ink); transition:transform 0.08s, box-shadow 0.08s;
-}
-.btn-action:hover{transform:translateY(2px); box-shadow:0 2px 0 var(--ink);}
-.btn-action.primary{background:var(--violet); color:#fff;}
-.btn-action.secondary{background:#fff; color:var(--indigo);}
+.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.5rem;padding-top:1.5rem;border-top:3px solid var(--line);}
+.btn-action{display:inline-flex;align-items:center;gap:7px;border:3px solid var(--ink);border-radius:14px;padding:11px 20px;font-size:13px;font-weight:800;cursor:pointer;font-family:var(--display);letter-spacing:0.2px;box-shadow:0 4px 0 var(--ink);transition:transform 0.08s,box-shadow 0.08s;}
+.btn-action:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--ink);}
+.btn-action.primary{background:var(--violet);color:#fff;}
+.btn-action.secondary{background:#fff;color:var(--indigo);}
 
 @media(max-width:680px){
   .mcq-grid{grid-template-columns:1fr;}
-  .results-grid{grid-template-columns:1fr 1fr;}
-  .eval-grid{grid-template-columns:1fr;}
+  .results-grid{grid-template-columns:repeat(2,1fr);}
   .form-grid{grid-template-columns:1fr;}
+  .section-overview{grid-template-columns:1fr;}
   .header-inner{padding:0 1rem;}
   .cover-body{padding:1.5rem;}
-  .score-display{font-size:48px;}
+  .score-display{font-size:44px;}
+  .tf-grid{max-width:100%;}
 }
-@media print{
-  .submit-bar,.site-header,.action-row,.btn-action{display:none!important;}
-}
+@media print{.submit-bar,.site-header,.action-row,.btn-action{display:none!important;}}
 </style>
 </head>
 <body>
@@ -393,10 +197,10 @@ body{
 <header class="site-header">
   <div class="header-inner">
     <div class="header-brand">
-      <div class="brand-mark">SST</div>
+      <div class="brand-mark">UGS</div>
       <div>
         <div class="brand-text">Student Selection Test</div>
-        <div class="brand-sub">Assessment Portal</div>
+        <div class="brand-sub">SkillShark CBT Portal</div>
       </div>
     </div>
     <div class="header-timer" id="timer-wrap" style="display:none">
@@ -406,56 +210,59 @@ body{
   </div>
 </header>
 
-<!-- ═══════════ COVER SCREEN ═══════════ -->
+<!-- ═══════ COVER ═══════ -->
 <div id="cover-screen">
   <div class="cover-wrap">
   <div class="cover-card">
     <div class="cover-header">
       <div class="cover-pill">★ Official Examination</div>
-      <div class="cover-title">Student Selection Test</div>
-      <div class="cover-subtitle">Program Selection Examination — Academic Year 2026–27</div>
+      <div class="cover-title">Umeed Global School</div>
+      <div class="cover-subtitle">Young Scientist & Young Entrepreneur Program — Computer-Based Test</div>
     </div>
     <div class="cover-body">
       <div class="cover-stats">
-        <div class="stat-box"><span class="val">80</span><span class="lbl">Total Marks</span></div>
+        <div class="stat-box"><span class="val">120</span><span class="lbl">Total Marks</span></div>
         <div class="stat-box"><span class="val">60</span><span class="lbl">Minutes</span></div>
-        <div class="stat-box"><span class="val">11</span><span class="lbl">Questions</span></div>
+        <div class="stat-box"><span class="val">8</span><span class="lbl">Sections</span></div>
       </div>
 
       <div class="form-grid">
-        <div class="form-field">
-          <label>Student Name</label>
-          <input type="text" id="field-name" placeholder="Full name">
+        <div class="form-field"><label>Student Name</label><input type="text" id="field-name" placeholder="Full name"></div>
+        <div class="form-field"><label>Roll Number</label><input type="text" id="field-roll" placeholder="e.g. 2024-001"></div>
+        <div class="form-field"><label>Class</label>
+          <select id="field-class" style="width:100%;border:2px solid var(--line);border-radius:12px;padding:11px 13px;font-size:14px;font-family:var(--body);color:var(--ink);background:var(--cream);outline:none;">
+            <option value="">Select Class</option>
+            <option>5th</option><option>6th</option><option>7th</option><option>8th</option>
+            <option>9th</option><option>10th</option><option>11th</option><option>12th</option>
+          </select>
         </div>
-        <div class="form-field">
-          <label>Roll Number</label>
-          <input type="text" id="field-roll" placeholder="e.g. 2024-001">
-        </div>
-        <div class="form-field">
-          <label>Class / Grade</label>
-          <input type="text" id="field-class" placeholder="e.g. Grade 8">
-        </div>
-        <div class="form-field">
-          <label>Date</label>
-          <input type="date" id="field-date">
-        </div>
+        <div class="form-field"><label>Date of Birth</label><input type="date" id="field-dob"></div>
       </div>
 
       <div class="notice-box">
         <div class="notice-icon">✅</div>
-        <div class="notice-body">
-          <p><strong>Auto-Upload Enabled.</strong> All answers and MCQ scores are uploaded to Google Sheets automatically the moment the student submits.</p>
-        </div>
+        <div class="notice-body"><p><strong>Auto-Upload Enabled.</strong> All answers and auto-scores (Sections A, B & C) are uploaded to Google Sheets automatically the moment the student submits.</p></div>
+      </div>
+
+      <div class="section-overview">
+        <div class="so-item"><b>A</b> True/False — 10 Marks</div>
+        <div class="so-item"><b>B</b> MCQ — 40 Marks</div>
+        <div class="so-item"><b>C</b> Logical Reasoning — 20 Marks</div>
+        <div class="so-item"><b>D</b> Higher Order Thinking — 15 Marks</div>
+        <div class="so-item"><b>E</b> Scenario-Based — 15 Marks</div>
+        <div class="so-item"><b>F</b> Case Study — 10 Marks</div>
+        <div class="so-item"><b>G</b> Entrepreneurship Case — 5 Marks</div>
+        <div class="so-item"><b>H</b> Essay/Opinion — 5 Marks</div>
       </div>
 
       <div class="instr-box">
         <h3>Instructions</h3>
         <ol>
           <li>Read all questions carefully before answering.</li>
-          <li>Answer all questions clearly and completely.</li>
-          <li>MCQ scores are calculated automatically on submission.</li>
+          <li>Sections A, B & C are auto-scored on submission.</li>
+          <li>Sections D-H are written responses, evaluated manually by the examiner.</li>
           <li>Maintain discipline and silence during the examination.</li>
-          <li>This test assesses logical thinking, creativity, communication, and problem-solving.</li>
+          <li>This test assesses scientific curiosity, logical reasoning, creativity, and entrepreneurial mindset.</li>
         </ol>
       </div>
       <button class="btn-start" onclick="startExam()">Begin Examination →</button>
@@ -464,37 +271,45 @@ body{
   </div>
 </div>
 
-<!-- ═══════════ EXAM SCREEN ═══════════ -->
+<!-- ═══════ EXAM ═══════ -->
 <div id="exam-screen">
   <div class="exam-layout">
     <div class="progress-card">
       <div class="progress-info">
-        <span>Section A: Logical Thinking and Reasoning</span>
-        <strong id="progress-count">0 / 11 answered</strong>
+        <span>Section A: True / False</span>
+        <strong id="progress-count">0 / 50 answered</strong>
       </div>
       <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
     </div>
     <div id="exam-main"></div>
   </div>
-  <div class="submit-bar">
-    <button class="btn-submit" onclick="confirmSubmit()">Submit Examination</button>
+  <div class="submit-bar"><button class="btn-submit" onclick="confirmSubmit()">Submit Examination</button></div>
+</div>
+
+<!-- ═══════ RESULTS / COMPLETION ═══════ -->
+<div id="results-screen">
+  <div class="results-inner">
+    <div class="results-hero">
+      <div class="res-eyebrow">Examination Complete</div>
+      <div class="score-display" style="font-size:34px;letter-spacing:0;line-height:1.4">You have completed your test.</div>
+      <div class="score-label">Your responses have been submitted successfully. You may now close this window.</div>
+    </div>
   </div>
 </div>
 
-<!-- ═══════════ RESULTS SCREEN ═══════════ -->
-<div id="results-screen">
-  <div class="results-inner">
-
+<!-- ═══════ EXAMINER VIEW (hidden, access via ?examiner=1) ═══════ -->
+<div id="examiner-screen" style="display:none">
+  <div class="results-inner" style="max-width:760px;margin:0 auto;padding:2rem 1.25rem 3rem;">
     <div class="results-hero">
-      <div class="res-eyebrow">Examination Complete</div>
-      <div class="score-display" id="result-score">—<span class="score-denom">/80</span></div>
+      <div class="res-eyebrow">Examination Complete — Examiner View</div>
+      <div class="score-display" id="result-score">—<span class="score-denom">/120</span></div>
       <div class="score-label" id="result-label">Overall Score</div>
     </div>
 
-    <div class="results-grid" id="results-stats-grid">
-      <div class="result-stat"><span class="r-val" id="r-seca">—</span><span class="r-lbl">Section A</span></div>
-      <div class="result-stat"><span class="r-val" id="r-secb">—</span><span class="r-lbl">Section B</span></div>
-      <div class="result-stat"><span class="r-val" id="r-total">—</span><span class="r-lbl">Total / 80</span></div>
+    <div class="results-grid">
+      <div class="result-stat"><span class="r-val" id="r-A">—</span><span class="r-lbl">Sec A /10</span></div>
+      <div class="result-stat"><span class="r-val" id="r-B">—</span><span class="r-lbl">Sec B /40</span></div>
+      <div class="result-stat"><span class="r-val" id="r-C">—</span><span class="r-lbl">Sec C /20</span></div>
       <div class="result-stat"><span class="r-val" id="r-pct">—</span><span class="r-lbl">Percentage</span></div>
     </div>
 
@@ -502,56 +317,42 @@ body{
       <span id="sheets-result-msg">Syncing to Google Sheets...</span>
     </div>
 
-    <!-- MARKS TABLE -->
     <div class="marks-table-section">
       <h3>Examiner Marks Entry</h3>
-      <p>MCQ scores are auto-calculated. Enter marks for written questions, then click "Apply &amp; Update".</p>
+      <p>Sections A, B, C are auto-calculated. Enter marks for D-H, then click "Apply &amp; Update".</p>
       <table class="marks-table">
-        <thead>
-          <tr><th>Q</th><th>Category</th><th>Max</th><th style="text-align:center">Awarded</th></tr>
-        </thead>
+        <thead><tr><th>Sec</th><th>Category</th><th>Max</th><th style="text-align:center">Awarded</th></tr></thead>
         <tbody>
-          <tr><td class="cat-label">Q1</td><td>Logical Problem Solving — Robot</td><td class="max-label">/8</td><td><input class="marks-input" id="m-q1" type="number" min="0" max="8" placeholder="0" oninput="clampMarks(this,8)"></td></tr>
-          <tr><td class="cat-label">Q2</td><td>Logical Problem Solving — Drone</td><td class="max-label">/8</td><td><input class="marks-input" id="m-q2" type="number" min="0" max="8" placeholder="0" oninput="clampMarks(this,8)"></td></tr>
-          <tr><td class="cat-label">Q3</td><td>MCQ (auto-scored)</td><td class="max-label">/16</td><td><input class="marks-input" id="m-q3" type="number" readonly style="background:#F1EEFF;cursor:not-allowed;color:var(--violet)"></td></tr>
-          <tr><td class="cat-label">Q4</td><td>Water Wastage Solution</td><td class="max-label">/12</td><td><input class="marks-input" id="m-q4" type="number" min="0" max="12" placeholder="0" oninput="clampMarks(this,12)"></td></tr>
-          <tr><td class="cat-label">Q5</td><td>Entrepreneurial Thinking</td><td class="max-label">/12</td><td><input class="marks-input" id="m-q5" type="number" min="0" max="12" placeholder="0" oninput="clampMarks(this,12)"></td></tr>
-          <tr><td class="cat-label">Q6</td><td>Creative Innovation</td><td class="max-label">/12</td><td><input class="marks-input" id="m-q6" type="number" min="0" max="12" placeholder="0" oninput="clampMarks(this,12)"></td></tr>
-          <tr><td class="cat-label">Q7</td><td>Social Problem Solution</td><td class="max-label">/12</td><td><input class="marks-input" id="m-q7" type="number" min="0" max="12" placeholder="0" oninput="clampMarks(this,12)"></td></tr>
-          <tr class="marks-total-row"><td colspan="2" style="font-weight:800">Grand Total</td><td class="max-label">/80</td><td style="font-size:16px;font-weight:800;color:var(--violet);font-family:var(--display)" id="marks-grand-total">—</td></tr>
+          <tr><td class="cat-label">A</td><td>True / False (auto)</td><td class="max-label">/10</td><td><input class="marks-input" id="m-A" type="number" readonly style="background:#F1EEFF;cursor:not-allowed;color:var(--violet)"></td></tr>
+          <tr><td class="cat-label">B</td><td>Multiple Choice (auto)</td><td class="max-label">/40</td><td><input class="marks-input" id="m-B" type="number" readonly style="background:#F1EEFF;cursor:not-allowed;color:var(--violet)"></td></tr>
+          <tr><td class="cat-label">C</td><td>Logical Reasoning (auto)</td><td class="max-label">/20</td><td><input class="marks-input" id="m-C" type="number" readonly style="background:#F1EEFF;cursor:not-allowed;color:var(--violet)"></td></tr>
+          <tr><td class="cat-label">D</td><td>Higher Order Thinking</td><td class="max-label">/15</td><td><input class="marks-input" id="m-D" type="number" min="0" max="15" placeholder="0" oninput="clampMarks(this,15)"></td></tr>
+          <tr><td class="cat-label">E</td><td>Scenario-Based</td><td class="max-label">/15</td><td><input class="marks-input" id="m-E" type="number" min="0" max="15" placeholder="0" oninput="clampMarks(this,15)"></td></tr>
+          <tr><td class="cat-label">F</td><td>Analytical Case Study</td><td class="max-label">/10</td><td><input class="marks-input" id="m-F" type="number" min="0" max="10" placeholder="0" oninput="clampMarks(this,10)"></td></tr>
+          <tr><td class="cat-label">G</td><td>Entrepreneurship Case</td><td class="max-label">/5</td><td><input class="marks-input" id="m-G" type="number" min="0" max="5" placeholder="0" oninput="clampMarks(this,5)"></td></tr>
+          <tr><td class="cat-label">H</td><td>Essay / Opinion</td><td class="max-label">/5</td><td><input class="marks-input" id="m-H" type="number" min="0" max="5" placeholder="0" oninput="clampMarks(this,5)"></td></tr>
+          <tr class="marks-total-row"><td colspan="2" style="font-weight:800">Grand Total</td><td class="max-label">/120</td><td style="font-size:16px;font-weight:800;color:var(--violet);font-family:var(--display)" id="marks-grand-total">—</td></tr>
         </tbody>
       </table>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:1rem;align-items:center">
-        <button class="btn-apply-marks" onclick="applyMarksAndUpdate()">Apply Marks &amp; Update</button>
-      </div>
+      <button class="btn-apply-marks" onclick="applyMarksAndUpdate()">Apply Marks &amp; Update</button>
       <p style="font-size:11px;color:#A0801A;margin-top:8px;font-weight:600">💡 Clicking <strong>Apply Marks &amp; Update</strong> recalculates the score and re-syncs to Google Sheets.</p>
     </div>
 
-    <!-- MCQ REVIEW -->
     <div class="review-section">
-      <div class="review-section-title">MCQ Review — Section A Q3</div>
-      <div id="mcq-review-list"></div>
+      <div class="review-section-title">Section A Review — True / False</div>
+      <div id="a-review-list"></div>
     </div>
-
-    <!-- WRITTEN ANSWERS -->
     <div class="review-section">
-      <div class="review-section-title">Written Answers — For Examiner Review</div>
+      <div class="review-section-title">Section B Review — Multiple Choice</div>
+      <div id="b-review-list"></div>
+    </div>
+    <div class="review-section">
+      <div class="review-section-title">Section C Review — Logical Reasoning</div>
+      <div id="c-review-list"></div>
+    </div>
+    <div class="review-section">
+      <div class="review-section-title">Sections D-H — Written Answers for Examiner Review</div>
       <div id="written-review-list"></div>
-    </div>
-
-    <!-- EVALUATOR -->
-    <div class="evaluator-section">
-      <h3>Examiner Evaluation</h3>
-      <div class="eval-grid">
-        <div class="eval-item"><label>Leadership</label><select class="eval-select" id="ev-leadership"><option value="">—</option><option>Excellent</option><option>Good</option><option>Average</option><option>Needs Improvement</option></select></div>
-        <div class="eval-item"><label>Communication</label><select class="eval-select" id="ev-comm"><option value="">—</option><option>Excellent</option><option>Good</option><option>Average</option><option>Needs Improvement</option></select></div>
-        <div class="eval-item"><label>Confidence</label><select class="eval-select" id="ev-conf"><option value="">—</option><option>Excellent</option><option>Good</option><option>Average</option><option>Needs Improvement</option></select></div>
-        <div class="eval-item"><label>Listening Skills</label><select class="eval-select" id="ev-listen"><option value="">—</option><option>Excellent</option><option>Good</option><option>Average</option><option>Needs Improvement</option></select></div>
-        <div class="eval-item"><label>Creativity</label><select class="eval-select" id="ev-creat"><option value="">—</option><option>Excellent</option><option>Good</option><option>Average</option><option>Needs Improvement</option></select></div>
-        <div class="eval-item"><label>Problem Solving</label><select class="eval-select" id="ev-prob"><option value="">—</option><option>Excellent</option><option>Good</option><option>Average</option><option>Needs Improvement</option></select></div>
-        <div class="eval-item full"><label>Overall Recommendation</label><select class="eval-select" id="ev-rec"><option value="">—</option><option>Highly Recommended</option><option>Recommended</option><option>Conditionally Recommended</option><option>Not Recommended</option></select></div>
-        <div class="eval-item full"><label>Examiner Notes</label><textarea class="eval-textarea-small" id="ev-notes" placeholder="Additional observations..."></textarea></div>
-      </div>
     </div>
 
     <div class="action-row">
@@ -563,282 +364,436 @@ body{
 
 <script>
 /* ══════════════════════════════
-   CONFIG — hardcoded Google Sheets URL
-   ─────────────────────────────
-   See doPost(e) Apps Script example in the SYNC section below.
-   Data is sent as application/x-www-form-urlencoded (URLSearchParams).
+   CONFIG
 ══════════════════════════════ */
-const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbx6_8YjRRjEwczpBouxLDvFTPMfkg2BrUmYsmvqJvrId_M9cL8K3G6BLYV4-RGasZL8Mw/exec';
+const SHEETS_URL = 'https://script.google.com/a/macros/skillshark.in/s/AKfycbx6_8YjRRjEwczpBouxLDvFTPMfkg2BrUmYsmvqJvrId_M9cL8K3G6BLYV4-RGasZL8Mw/exec';
 
 /* ══════════════════════════════
-   MCQ QUESTIONS
+   QUESTION DATA
 ══════════════════════════════ */
-const MCQ_QUESTIONS = [
-  { text: 'Look at this series: 2, 6, 18, 54, ___', options: ['108','162','120','180'], correct: 1 },
-  { text: 'Which word is the odd one out?', options: ['Triangle','Square','Circle','Cube'], correct: 3 },
-  { text: 'TEACH : HCAET :: DRIVE : ___', options: ['EVIDR','IVRED','VEDIR','RIVED'], correct: 0 },
-  { text: 'If 5 pens cost Rs.20, how much will 8 pens cost?', options: ['Rs.28','Rs.30','Rs.32','Rs.36'], correct: 2 },
-  { text: 'Ayesha walks 6m east, turns left 4m, turns left 6m. Which direction is she facing?', options: ['North','South','East','West'], correct: 3 },
-  { text: 'What comes next: AB, BC, CD, DE, ___', options: ['EF','FG','FE','GH'], correct: 0 },
-  { text: 'Which number is prime?', options: ['21','27','29','33'], correct: 2 },
-  { text: 'A school has 4 robotics clubs with 12 students each. Total students?', options: ['36','40','44','48'], correct: 3 }
+// SECTION A: True/False — true=0(True), false=1(False)
+const SECTION_A = [
+  { text: 'Scientists solve problems by asking questions and testing ideas.', correct: true },
+  { text: 'Artificial Intelligence can learn patterns from data.', correct: true },
+  { text: 'Innovation means copying someone else\'s idea exactly.', correct: false },
+  { text: 'Failure can help a person learn and improve.', correct: true },
+  { text: 'Entrepreneurs only work to earn money.', correct: false },
+  { text: 'Robots can never help humans in daily life.', correct: false },
+  { text: 'Teamwork is important in building successful projects.', correct: true },
+  { text: 'Every community problem can be solved only by the government.', correct: false },
+  { text: 'Data can help us make better decisions.', correct: true },
+  { text: 'Curiosity is an important quality of scientists and innovators.', correct: true }
+];
+
+// SECTION B: MCQ — correct index 0=A,1=B,2=C,3=D
+const SECTION_B = [
+  { text: 'What is the first step in solving a problem?', options:['Ignore it','Understand it','Complain about it','Wait for others'], correct:1 },
+  { text: 'Which of the following is an example of innovation?', options:['Copying homework','Creating a better school bag','Doing nothing','Complaining'], correct:1 },
+  { text: 'Which technology helps machines learn from data?', options:['AI','Bicycle','Calculator','Notebook'], correct:0 },
+  { text: 'If a robot can detect obstacles, which sensor may be used?', options:['Distance Sensor','Pencil','Paper','Paint'], correct:0 },
+  { text: 'Which skill is most important for entrepreneurs?', options:['Giving up easily','Problem Solving','Avoiding Responsibility','Blaming Others'], correct:1 },
+  { text: 'What does VR stand for?', options:['Virtual Reality','Visual Robot','Virtual Robot','Video Research'], correct:0 },
+  { text: 'Why do scientists conduct experiments?', options:['To test ideas','To waste time','To copy others','To avoid learning'], correct:0 },
+  { text: 'What should you do if your project fails?', options:['Quit','Learn and Improve','Blame Teammates','Hide Results'], correct:1 },
+  { text: 'Which is a renewable energy source?', options:['Solar Energy','Coal','Diesel','Petrol'], correct:0 },
+  { text: 'Which of the following is an example of data?', options:['Number of students present today','A guess','A rumor','An opinion'], correct:0 },
+  { text: 'Which quality helps people discover new things?', options:['Curiosity','Laziness','Fear','Anger'], correct:0 },
+  { text: 'What is a startup?', options:['A problem','A new business idea','A homework assignment','A school subject'], correct:1 },
+  { text: 'Which technology is used in 3D Printing?', options:['Layer-by-Layer Manufacturing','Painting','Photography','Writing'], correct:0 },
+  { text: 'What is the best way to improve a product?', options:['Test and gather feedback','Ignore users','Stop working','Guess'], correct:0 },
+  { text: 'Why are industrial visits useful?', options:['To understand real-world work','To skip classes','To avoid learning','To waste time'], correct:0 },
+  { text: 'Which of the following is a community problem?', options:['Water Wastage','Reading a Book','Playing Sports','Learning Coding'], correct:0 },
+  { text: 'What is the role of teamwork?', options:['Increase Conflict','Share Strengths and Ideas','Reduce Learning','Delay Work'], correct:1 },
+  { text: 'Which is an example of entrepreneurship?', options:['Starting a Recycling Initiative','Copying Answers','Ignoring Problems','Wasting Resources'], correct:0 },
+  { text: 'Why is communication important?', options:['To share ideas clearly','To confuse people','To avoid teamwork','To hide information'], correct:0 },
+  { text: 'What makes a good leader?', options:['Responsibility','Dishonesty','Laziness','Fear'], correct:0 }
+];
+
+// SECTION C: Logical Reasoning & Quantitative Aptitude
+const SECTION_C = [
+  { text: 'Find the missing number: 2, 4, 8, 16, ___, 64', options:['24','28','32','36'], correct:2 },
+  { text: 'If DRONE is coded as ESPOF, ROBOT will be coded as:', options:['SPCPU','SPCPT','RQCPU','TQCPU'], correct:0 },
+  { text: 'A student walks 10m North, then 10m East, then 10m South. Where is he from the starting point?', options:['North','East','West','South'], correct:1 },
+  { text: 'Which comes next? Idea → Design → Prototype → Test → ___', options:['Forget','Improve','Destroy','Ignore'], correct:1 },
+  { text: 'A robotics team has 24 students divided equally into groups of 4. How many groups are formed?', options:['4','5','6','8'], correct:2 },
+  { text: 'If one drone costs Rs.500 and a school buys 8 drones, what is the total cost?', options:['Rs.3,000','Rs.3,500','Rs.4,000','Rs.4,500'], correct:2 },
+  { text: 'Which number does not belong? 3, 6, 9, 12, 15, 17', options:['12','15','17','9'], correct:2 },
+  { text: 'If 5 students can complete a project in 10 days, how many student-days are required?', options:['50','40','60','100'], correct:0 },
+  { text: 'A student buys materials worth Rs.200 and sells the product for Rs.280. What is the profit?', options:['Rs.60','Rs.70','Rs.80','Rs.90'], correct:2 },
+  { text: 'Which figure comes next? Circle → Triangle → Square → Pentagon → ___', options:['Hexagon','Rectangle','Oval','Circle'], correct:0 }
+];
+
+// SECTION D: Higher Order Thinking (3 of 5 questions, 5 marks each)
+const SECTION_D = [
+  'Your school wants to reduce paper waste. Suggest three innovative solutions.',
+  'If you could invent a robot for your school, what would it do and why?',
+  'Imagine your town faces frequent traffic problems. How would technology help solve them?'
+];
+
+// SECTION E: Scenario-Based (3 questions, 5 marks each)
+const SECTION_E = [
+  'During a robotics competition, your robot stops working just before the final round. What would you do?',
+  'Your team has a great idea, but members disagree on implementation. How would you resolve the situation?',
+  'You are given Rs.10,000 to improve student life in your school. How would you use it and why?'
 ];
 
 /* ══════════════════════════════
    STATE
 ══════════════════════════════ */
-let timerInterval = null;
-let timeLeft = 60 * 60;
-let examStartTime = null;
-let answers = {};
-let mcqAutoScore = 0;
+let timerInterval=null, timeLeft=60*60, examStartTime=null;
+let answers={};
 
 /* ══════════════════════════════
-   EXAM START
+   EXAM START / TIMER
 ══════════════════════════════ */
-function startExam() {
-  const name = document.getElementById('field-name').value.trim();
-  const roll = document.getElementById('field-roll').value.trim();
-  if (!name) { alert('Please enter student name.'); return; }
-  if (!roll) { alert('Please enter roll number.'); return; }
-  examStartTime = new Date();
-  document.getElementById('cover-screen').style.display = 'none';
-  document.getElementById('exam-screen').style.display = 'block';
-  document.getElementById('timer-wrap').style.display = 'flex';
+function startExam(){
+  const name=document.getElementById('field-name').value.trim();
+  const roll=document.getElementById('field-roll').value.trim();
+  if(!name){alert('Please enter student name.');return;}
+  if(!roll){alert('Please enter roll number.');return;}
+  examStartTime=new Date();
+  document.getElementById('cover-screen').style.display='none';
+  document.getElementById('exam-screen').style.display='block';
+  document.getElementById('timer-wrap').style.display='flex';
   renderExam();
   startTimer();
 }
-
-function startTimer() {
-  timerInterval = setInterval(() => {
+function startTimer(){
+  timerInterval=setInterval(()=>{
     timeLeft--;
-    const d = document.getElementById('timer-display');
-    const m = Math.floor(timeLeft / 60), s = timeLeft % 60;
-    d.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-    d.className = 'timer-display';
-    if (timeLeft <= 600) d.classList.add('warning');
-    if (timeLeft <= 120) { d.classList.remove('warning'); d.classList.add('danger'); }
-    if (timeLeft <= 0) { clearInterval(timerInterval); submitExam(); }
-  }, 1000);
+    const d=document.getElementById('timer-display');
+    const m=Math.floor(timeLeft/60), s=timeLeft%60;
+    d.textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    d.className='timer-display';
+    if(timeLeft<=600) d.classList.add('warning');
+    if(timeLeft<=120){d.classList.remove('warning');d.classList.add('danger');}
+    if(timeLeft<=0){clearInterval(timerInterval);submitExam();}
+  },1000);
 }
 
 /* ══════════════════════════════
    RENDER EXAM
 ══════════════════════════════ */
-function renderExam() {
-  const main = document.getElementById('exam-main');
+function renderExam(){
+  const main=document.getElementById('exam-main');
 
-  const secA = document.createElement('div');
-  secA.id = 'section-a';
-  secA.innerHTML = `
-    <div class="section-divider"><h2>Section A: Logical Thinking &amp; Reasoning</h2><span class="section-badge">32 Marks</span></div>
-    ${renderWrittenQ('q1','1','Logical Problem Solving','8 Marks — Show full reasoning',
-      'A robot moves <strong>3 steps forward</strong> and <strong>2 steps backward</strong> repeatedly. How many full cycles are needed to reach at least <strong>11 steps</strong>? Show your reasoning clearly.',
-      'Write your working:\nAfter 1 cycle, net position = ...\nAfter 2 cycles = ...')}
-    ${renderWrittenQ('q2','2','Logical Problem Solving','8 Marks — Show full reasoning',
-      'A drone rises <strong>4 meters</strong>, then drops <strong>1 meter</strong>, and repeats this pattern. How many full cycles are needed for the drone to reach at least <strong>15 meters</strong>? Show your reasoning clearly.',
-      'Show each cycle:\nAfter cycle 1: height = ...\nAfter cycle 2: height = ...')}
-    ${renderMCQBlock()}`;
+  // SECTION A
+  const secA=document.createElement('div');
+  let htmlA=`<div class="section-divider"><h2>Section A: True / False</h2><span class="section-badge">10 Marks · 1 mark each</span></div>
+    <div class="question-card"><div class="q-header"><div class="q-number">A</div><div class="q-meta"><div class="q-title">True or False</div><div class="q-marks">10 Questions × 1 Mark = 10 Marks</div></div></div><div class="q-body">`;
+  SECTION_A.forEach((q,i)=>{
+    htmlA+=`<div class="tf-sub" id="tf-sub-${i}">
+      <div class="sub-q-text">${i+1}. ${q.text}</div>
+      <div class="tf-grid">
+        <div class="mcq-option" id="tf-${i}-0" onclick="selectTF(${i},0)"><div class="opt-indicator">T</div><div class="opt-text">True</div></div>
+        <div class="mcq-option" id="tf-${i}-1" onclick="selectTF(${i},1)"><div class="opt-indicator">F</div><div class="opt-text">False</div></div>
+      </div>
+    </div>`;
+  });
+  htmlA+=`</div></div>`;
+  secA.innerHTML=htmlA;
   main.appendChild(secA);
 
-  const secB = document.createElement('div');
-  secB.id = 'section-b';
-  secB.innerHTML = `
-    <div class="section-divider" style="margin-top:2rem"><h2>Section B: Creativity &amp; Innovation</h2><span class="section-badge">48 Marks</span></div>
-    ${renderWrittenQ('q4','4','Problem Solving Essay','12 Marks — Written response',
-      'Design a <strong>low-cost solution</strong> to reduce water wastage in your school. Explain the idea in points and describe one simple drawing or diagram.',
-      'Points:\n1. Problem: ...\n2. Solution: ...\n3. How it works: ...\n4. Cost estimate: ...\n5. Expected impact: ...')}
-    ${renderWrittenQ('q5','5','Entrepreneurial Thinking','12 Marks — Business plan',
-      'If you had <strong>Rs. 2000</strong> and <strong>10 days</strong>, what student-friendly business or service would you start? Explain product, pricing, marketing, and expected profit.',
-      'Business Idea: ...\n\nProduct / Service: ...\n\nPricing: ...\n\nMarketing Plan: ...\n\nExpected Profit: ...')}
-    ${renderWrittenQ('q6','6','Creative Innovation','12 Marks — Design an innovation',
-      'Imagine your school wants to make learning more interesting. Design one <strong>simple innovation</strong> using science, technology, or a creative classroom tool.',
-      'Innovation Name: ...\n\nWhat it is: ...\n\nHow it works: ...\n\nWhy it helps: ...')}
-    ${renderWrittenQ('q7','7','Social Problem Solution','12 Marks — Practical student-led solution',
-      'Choose one problem in your school or local area — waste, traffic, noise, safety, or cleanliness. Suggest a <strong>practical solution</strong> a student team can implement.',
-      'Problem: ...\n\nWhy it matters: ...\n\nSolution: ...\n\nStep 1: ...\nStep 2: ...\nStep 3: ...\n\nExpected outcome: ...')}`;
+  // SECTION B
+  const secB=document.createElement('div');
+  let htmlB=`<div class="section-divider" style="margin-top:2rem"><h2>Section B: Multiple Choice Questions</h2><span class="section-badge">40 Marks · 2 marks each</span></div>
+    <div class="question-card"><div class="q-header"><div class="q-number">B</div><div class="q-meta"><div class="q-title">Multiple Choice Questions</div><div class="q-marks">20 Questions × 2 Marks = 40 Marks</div></div></div><div class="q-body">`;
+  htmlB+=renderMCQGroup(SECTION_B,'b');
+  htmlB+=`</div></div>`;
+  secB.innerHTML=htmlB;
   main.appendChild(secB);
-  setTimeout(updateProgress, 50);
+
+  // SECTION C
+  const secC=document.createElement('div');
+  let htmlC=`<div class="section-divider" style="margin-top:2rem"><h2>Section C: Logical Reasoning & Quantitative Aptitude</h2><span class="section-badge">20 Marks · 2 marks each</span></div>
+    <div class="question-card"><div class="q-header"><div class="q-number">C</div><div class="q-meta"><div class="q-title">Logical Reasoning & Quantitative Aptitude</div><div class="q-marks">10 Questions × 2 Marks = 20 Marks</div></div></div><div class="q-body">`;
+  htmlC+=renderMCQGroup(SECTION_C,'c');
+  htmlC+=`</div></div>`;
+  secC.innerHTML=htmlC;
+  main.appendChild(secC);
+
+  // SECTION D
+  const secD=document.createElement('div');
+  secD.innerHTML=`<div class="section-divider" style="margin-top:2rem"><h2>Section D: Higher Order Thinking</h2><span class="section-badge">15 Marks · 5 each</span></div>
+    ${renderWrittenQ('d','D','Higher Order Thinking','3 Questions × 5 Marks = 15 Marks', SECTION_D.map((q,i)=>({label:`D${i+1}`, text:q})))}`;
+  main.appendChild(secD);
+
+  // SECTION E
+  const secE=document.createElement('div');
+  secE.innerHTML=`<div class="section-divider" style="margin-top:2rem"><h2>Section E: Scenario-Based Questions</h2><span class="section-badge">15 Marks · 5 each</span></div>
+    ${renderWrittenQ('e','E','Scenario-Based Questions','3 Questions × 5 Marks = 15 Marks', SECTION_E.map((q,i)=>({label:`E${i+1}`, text:q})))}`;
+  main.appendChild(secE);
+
+  // SECTION F
+  const secF=document.createElement('div');
+  secF.innerHTML=`<div class="section-divider" style="margin-top:2rem"><h2>Section F: Analytical Case Study</h2><span class="section-badge">10 Marks</span></div>
+    ${renderWrittenQ('f','F','Analytical Case Study','10 Marks', [
+      {label:'Case', text:'Many students in a town travel long distances to school. They often arrive tired and late. Parents are concerned about safety and transportation costs.', isCase:true},
+      {label:'F1a', text:'a) What are the key problems? (3 Marks)'},
+      {label:'F1b', text:'b) Why do these problems exist? (3 Marks)'},
+      {label:'F1c', text:'c) Suggest three practical technology based solutions. (4 Marks)'}
+    ])}`;
+  main.appendChild(secF);
+
+  // SECTION G
+  const secG=document.createElement('div');
+  secG.innerHTML=`<div class="section-divider" style="margin-top:2rem"><h2>Section G: Entrepreneurship & Innovation Case</h2><span class="section-badge">5 Marks</span></div>
+    ${renderWrittenQ('g','G','Entrepreneurship & Innovation Case','5 Marks', [
+      {label:'Case', text:'Your school cafeteria throws away nearly 20 kg of food every day. As a Young Entrepreneur, answer:', isCase:true},
+      {label:'G1a', text:'a) What problem do you identify? (1 Mark)'},
+      {label:'G1b', text:'b) What information would you collect before solving it? (1 Mark)'},
+      {label:'G1c', text:'c) Suggest a solution. (3 Marks)'}
+    ])}`;
+  main.appendChild(secG);
+
+  // SECTION H
+  const secH=document.createElement('div');
+  secH.innerHTML=`<div class="section-divider" style="margin-top:2rem"><h2>Section H: Essay / Opinion Question</h2><span class="section-badge">5 Marks</span></div>
+    ${renderWrittenQ('h','H','Essay / Opinion Question','5 Marks (150-250 Words)', [
+      {label:'H1', text:'If you are selected for the Young Scientist & Young Entrepreneur Program, how will you use this opportunity to create a positive impact in your school, family, or community? (150-250 Words)'}
+    ])}`;
+  main.appendChild(secH);
+
+  setTimeout(updateProgress,50);
 }
 
-function renderWrittenQ(key, num, title, marks, text, placeholder) {
-  return `<div class="question-card" id="card-${key}">
-    <div class="q-header">
-      <div class="q-number">${num}</div>
-      <div class="q-meta"><div class="q-title">${title}</div><div class="q-marks">${marks}</div></div>
-    </div>
-    <div class="q-body">
-      <p class="q-text">${text}</p>
-      <textarea class="answer-textarea" id="ans-${key}" placeholder="${placeholder}" oninput="markAnswered('${key}',this.value);updateWordCount('${key}',this.value)"></textarea>
-      <div class="word-count" id="wc-${key}">0 words</div>
-    </div>
-  </div>`;
-}
-
-function renderMCQBlock() {
-  const labels = ['a','b','c','d'];
-  let html = `<div class="question-card" id="card-q3">
-    <div class="q-header"><div class="q-number">3</div><div class="q-meta"><div class="q-title">Multiple Choice Questions</div><div class="q-marks">16 Marks — 2 marks each</div></div></div>
-    <div class="q-body">`;
-  MCQ_QUESTIONS.forEach((q, i) => {
-    html += `<div class="mcq-sub" id="mcq-sub-${i}">
+function renderMCQGroup(arr, prefix){
+  const labels=['a','b','c','d'];
+  let html='';
+  arr.forEach((q,i)=>{
+    html+=`<div class="mcq-sub" id="${prefix}-sub-${i}">
       <div class="sub-q-text">${i+1}. ${q.text}</div>
       <div class="mcq-grid">
-        ${q.options.map((opt,j) => `<div class="mcq-option" id="mcq-${i}-${j}" onclick="selectMCQ(${i},${j})">
-          <div class="opt-indicator">${labels[j]}</div>
-          <div class="opt-text">${opt}</div>
+        ${q.options.map((opt,j)=>`<div class="mcq-option" id="${prefix}-${i}-${j}" onclick="selectMCQ('${prefix}',${i},${j})">
+          <div class="opt-indicator">${labels[j]}</div><div class="opt-text">${labels[j]}) ${opt}</div>
         </div>`).join('')}
       </div>
     </div>`;
   });
-  html += `</div></div>`;
   return html;
+}
+
+function renderWrittenQ(secKey, secLabel, title, marks, parts){
+  let body='';
+  parts.forEach(p=>{
+    if(p.isCase){
+      body+=`<div class="sub-part"><p class="q-text" style="background:#F1EEFF;border:2px solid var(--violet);border-radius:12px;padding:12px 14px;font-style:italic;">${p.text}</p></div>`;
+    } else {
+      body+=`<div class="sub-part">
+        <div class="sub-part-label">${p.label}</div>
+        <p class="q-text">${p.text}</p>
+        <textarea class="answer-textarea" id="ans-${p.label.toLowerCase()}" placeholder="Write your answer here..." oninput="markAnswered('${p.label.toLowerCase()}',this.value);updateWordCount('${p.label.toLowerCase()}',this.value)"></textarea>
+        <div class="word-count" id="wc-${p.label.toLowerCase()}">0 words</div>
+      </div>`;
+    }
+  });
+  return `<div class="question-card" id="card-${secKey}">
+    <div class="q-header"><div class="q-number">${secLabel}</div><div class="q-meta"><div class="q-title">${title}</div><div class="q-marks">${marks}</div></div></div>
+    <div class="q-body">${body}</div>
+  </div>`;
 }
 
 /* ══════════════════════════════
    INTERACTION
 ══════════════════════════════ */
-function selectMCQ(qi, oi) {
-  answers[`mcq-${qi}`] = oi;
-  const labels = ['a','b','c','d'];
-  document.querySelectorAll(`[id^="mcq-${qi}-"]`).forEach((el, j) => {
-    el.classList.toggle('selected', j === oi);
-    el.querySelector('.opt-indicator').textContent = j === oi ? labels[j].toUpperCase() : labels[j];
+function selectTF(i,oi){
+  answers[`tf-${i}`]=oi;
+  ['T','F'].forEach((lab,j)=>{
+    const el=document.getElementById(`tf-${i}-${j}`);
+    el.classList.toggle('selected', j===oi);
   });
   updateProgress();
 }
-
-function markAnswered(key, val) { answers[key] = val.trim(); updateProgress(); }
-function updateWordCount(key, val) {
-  const w = val.trim().split(/\s+/).filter(x => x).length;
-  const el = document.getElementById(`wc-${key}`);
-  if (!el) return;
-  el.textContent = `${w} word${w !== 1 ? 's' : ''}`;
-  el.className = 'word-count' + (w < 20 ? ' low' : w >= 50 ? ' good' : '');
+function selectMCQ(prefix,qi,oi){
+  answers[`${prefix}-${qi}`]=oi;
+  const labels=['a','b','c','d'];
+  document.querySelectorAll(`[id^="${prefix}-${qi}-"]`).forEach((el,j)=>{
+    el.classList.toggle('selected', j===oi);
+  });
+  updateProgress();
 }
-function updateProgress() {
-  let done = 0;
-  if (answers['q1']?.length) done++;
-  if (answers['q2']?.length) done++;
-  MCQ_QUESTIONS.forEach((_,i) => { if (answers[`mcq-${i}`] !== undefined) done++; });
-  ['q4','q5','q6','q7'].forEach(k => { if (answers[k]?.length) done++; });
-  document.getElementById('progress-count').textContent = `${done} / 11 answered`;
-  document.getElementById('progress-fill').style.width = `${(done/11)*100}%`;
+function markAnswered(key,val){answers[key]=val.trim();updateProgress();}
+function updateWordCount(key,val){
+  const w=val.trim().split(/\s+/).filter(x=>x).length;
+  const el=document.getElementById(`wc-${key}`);
+  if(!el)return;
+  el.textContent=`${w} word${w!==1?'s':''}`;
+  el.className='word-count'+(w<10?' low':w>=30?' good':'');
+}
+function updateProgress(){
+  let done=0, total=10+20+10+3+3+4+4+1; // A10 + B20 + C10 + D3 + E3 + F(case excluded,3 parts) + G(3 parts) + H1 = 50... recompute properly
+  // Recount precisely:
+  total = 10 + 20 + 10 + 3 + 3 + 3 + 3 + 1; // A,B,C,D,E,F(a,b,c),G(a,b,c),H = 53
+  done=0;
+  for(let i=0;i<10;i++) if(answers[`tf-${i}`]!==undefined) done++;
+  for(let i=0;i<20;i++) if(answers[`b-${i}`]!==undefined) done++;
+  for(let i=0;i<10;i++) if(answers[`c-${i}`]!==undefined) done++;
+  ['d1','d2','d3','e1','e2','e3','f1a','f1b','f1c','g1a','g1b','g1c','h1'].forEach(k=>{ if(answers[k]?.length) done++; });
+  document.getElementById('progress-count').textContent=`${done} / ${total} answered`;
+  document.getElementById('progress-fill').style.width=`${(done/total)*100}%`;
 }
 
-function confirmSubmit() { if(confirm('Submit examination? You cannot make changes after submission.')) submitExam(); }
+function confirmSubmit(){if(confirm('Submit examination? You cannot make changes after submission.')) submitExam();}
 
 /* ══════════════════════════════
-   SUBMIT
+   SUBMIT / SCORING
 ══════════════════════════════ */
-function submitExam() {
+let scoreA=0, scoreB=0, scoreC=0;
+
+function submitExam(){
   clearInterval(timerInterval);
   document.getElementById('exam-screen').style.display='none';
   document.getElementById('timer-wrap').style.display='none';
   document.getElementById('results-screen').style.display='block';
 
-  let correct = 0;
-  MCQ_QUESTIONS.forEach((q,i) => { if(answers[`mcq-${i}`]===q.correct) correct++; });
-  mcqAutoScore = correct * 2;
-  document.getElementById('m-q3').value = mcqAutoScore;
-
-  // Capture textarea values into answers state before building review
-  ['q1','q2','q4','q5','q6','q7'].forEach(k => {
-    const el = document.getElementById(`ans-${k}`);
-    if (el && el.value.trim()) answers[k] = el.value.trim();
+  // Capture textareas
+  ['d1','d2','d3','e1','e2','e3','f1a','f1b','f1c','g1a','g1b','g1c','h1'].forEach(k=>{
+    const el=document.getElementById(`ans-${k}`);
+    if(el && el.value.trim()) answers[k]=el.value.trim();
   });
 
-  buildMCQReview();
-  buildWrittenReview();
-  updateGrandTotal();
+  // Score A (1 mark each)
+  scoreA=0;
+  SECTION_A.forEach((q,i)=>{
+    const sel=answers[`tf-${i}`]; // 0=True,1=False
+    const correctIdx = q.correct ? 0 : 1;
+    if(sel===correctIdx) scoreA++;
+  });
 
-  const initTotal = mcqAutoScore;
-  const initPct = Math.round((initTotal / 80) * 100);
-  document.getElementById('result-score').innerHTML = `${initTotal}<span class="score-denom">/80</span>`;
-  document.getElementById('r-seca').textContent = `${mcqAutoScore}/32`;
-  document.getElementById('r-secb').textContent = `0/48`;
-  document.getElementById('r-total').textContent = `${initTotal}/80`;
-  document.getElementById('r-pct').textContent = `${initPct}%`;
+  // Score B (2 marks each)
+  scoreB=0;
+  SECTION_B.forEach((q,i)=>{ if(answers[`b-${i}`]===q.correct) scoreB+=2; });
+
+  // Score C (2 marks each)
+  scoreC=0;
+  SECTION_C.forEach((q,i)=>{ if(answers[`c-${i}`]===q.correct) scoreC+=2; });
+
+  // Always send to sheets in the background
+  sendPayload();
+
+  // Only show full results/marks UI to examiners
+  const isExaminer = new URLSearchParams(window.location.search).get('examiner')==='1';
+  if(isExaminer){
+    document.getElementById('examiner-screen').style.display='block';
+
+    document.getElementById('m-A').value=scoreA;
+    document.getElementById('m-B').value=scoreB;
+    document.getElementById('m-C').value=scoreC;
+
+    buildABCReview();
+    buildWrittenReview();
+    updateGrandTotal();
+
+    const initTotal=scoreA+scoreB+scoreC;
+    const initPct=Math.round((initTotal/120)*100);
+    document.getElementById('result-score').innerHTML=`${initTotal}<span class="score-denom">/120</span>`;
+    document.getElementById('r-A').textContent=`${scoreA}/10`;
+    document.getElementById('r-B').textContent=`${scoreB}/40`;
+    document.getElementById('r-C').textContent=`${scoreC}/20`;
+    document.getElementById('r-pct').textContent=`${initPct}%`;
+    showSheetsStatus('Uploading to Google Sheets…','pending');
+  }
 
   window.scrollTo(0,0);
-  autoSendOnSubmit();
 }
 
 /* ══════════════════════════════
    MARKS
 ══════════════════════════════ */
-function clampMarks(el, max) {
-  let v = parseInt(el.value)||0;
+function clampMarks(el,max){
+  let v=parseInt(el.value)||0;
   if(v>max){el.value=max;v=max;} if(v<0){el.value=0;v=0;}
   updateGrandTotal();
 }
-
-function updateGrandTotal() {
-  const q1=parseInt(document.getElementById('m-q1').value)||0;
-  const q2=parseInt(document.getElementById('m-q2').value)||0;
-  const q3=mcqAutoScore;
-  const q4=parseInt(document.getElementById('m-q4').value)||0;
-  const q5=parseInt(document.getElementById('m-q5').value)||0;
-  const q6=parseInt(document.getElementById('m-q6').value)||0;
-  const q7=parseInt(document.getElementById('m-q7').value)||0;
-  const total=q1+q2+q3+q4+q5+q6+q7;
-  document.getElementById('marks-grand-total').textContent=`${total}/80`;
+function getMarks(){
+  return {
+    A:scoreA, B:scoreB, C:scoreC,
+    D:parseInt(document.getElementById('m-D').value)||0,
+    E:parseInt(document.getElementById('m-E').value)||0,
+    F:parseInt(document.getElementById('m-F').value)||0,
+    G:parseInt(document.getElementById('m-G').value)||0,
+    H:parseInt(document.getElementById('m-H').value)||0
+  };
 }
-
-function applyMarksAndUpdate() {
-  const q1=parseInt(document.getElementById('m-q1').value)||0;
-  const q2=parseInt(document.getElementById('m-q2').value)||0;
-  const q3=mcqAutoScore;
-  const q4=parseInt(document.getElementById('m-q4').value)||0;
-  const q5=parseInt(document.getElementById('m-q5').value)||0;
-  const q6=parseInt(document.getElementById('m-q6').value)||0;
-  const q7=parseInt(document.getElementById('m-q7').value)||0;
-  const secA=q1+q2+q3;
-  const secB=q4+q5+q6+q7;
-  const total=secA+secB;
-  const pct=Math.round((total/80)*100);
-
-  document.getElementById('result-score').innerHTML=`${total}<span class="score-denom">/80</span>`;
-  document.getElementById('r-seca').textContent=`${secA}/32`;
-  document.getElementById('r-secb').textContent=`${secB}/48`;
-  document.getElementById('r-total').textContent=`${total}/80`;
+function updateGrandTotal(){
+  const m=getMarks();
+  const total=m.A+m.B+m.C+m.D+m.E+m.F+m.G+m.H;
+  document.getElementById('marks-grand-total').textContent=`${total}/120`;
+}
+function applyMarksAndUpdate(){
+  const m=getMarks();
+  const total=m.A+m.B+m.C+m.D+m.E+m.F+m.G+m.H;
+  const pct=Math.round((total/120)*100);
+  document.getElementById('result-score').innerHTML=`${total}<span class="score-denom">/120</span>`;
+  document.getElementById('r-A').textContent=`${m.A}/10`;
+  document.getElementById('r-B').textContent=`${m.B}/40`;
+  document.getElementById('r-C').textContent=`${m.C}/20`;
   document.getElementById('r-pct').textContent=`${pct}%`;
-
+  updateGrandTotal();
   sendToSheets();
 }
 
 /* ══════════════════════════════
    REVIEW BUILDERS
 ══════════════════════════════ */
-function buildMCQReview() {
-  const labels=['a) ','b) ','c) ','d) '];
-  const html = MCQ_QUESTIONS.map((q,i) => {
-    const sel = answers[`mcq-${i}`];
-    const ok = sel===q.correct;
+function buildABCReview(){
+  // A
+  let htmlA=SECTION_A.map((q,i)=>{
+    const sel=answers[`tf-${i}`];
+    const correctIdx=q.correct?0:1;
+    const ok=sel===correctIdx;
+    const labels=['True','False'];
     return `<div class="review-item">
       <div class="review-status ${sel===undefined?'skip':ok?'correct':'wrong'}">${sel===undefined?'?':ok?'✓':'✗'}</div>
-      <div class="review-item-text">
-        <p>${i+1}. ${q.text}</p>
-        <div class="answer-info">
-          ${sel!==undefined?`Your answer: <strong>${labels[sel]}${q.options[sel]}</strong> &nbsp;|&nbsp; `:'Not answered &nbsp;|&nbsp; '}
-          Correct: <strong style="color:#0F8C5E">${labels[q.correct]}${q.options[q.correct]}</strong>
-        </div>
-      </div>
+      <div class="review-item-text"><p>${i+1}. ${q.text}</p>
+      <div class="answer-info">${sel!==undefined?`Your answer: <strong>${labels[sel]}</strong> | `:'Not answered | '}Correct: <strong style="color:#0F8C5E">${labels[correctIdx]}</strong></div></div>
     </div>`;
   }).join('');
-  document.getElementById('mcq-review-list').innerHTML = html;
+  document.getElementById('a-review-list').innerHTML=htmlA;
+
+  // B
+  const labelsBC=['a','b','c','d'];
+  let htmlB=SECTION_B.map((q,i)=>{
+    const sel=answers[`b-${i}`];
+    const ok=sel===q.correct;
+    return `<div class="review-item">
+      <div class="review-status ${sel===undefined?'skip':ok?'correct':'wrong'}">${sel===undefined?'?':ok?'✓':'✗'}</div>
+      <div class="review-item-text"><p>${i+1}. ${q.text}</p>
+      <div class="answer-info">${sel!==undefined?`Your answer: <strong>${labelsBC[sel]}) ${q.options[sel]}</strong> | `:'Not answered | '}Correct: <strong style="color:#0F8C5E">${labelsBC[q.correct]}) ${q.options[q.correct]}</strong></div></div>
+    </div>`;
+  }).join('');
+  document.getElementById('b-review-list').innerHTML=htmlB;
+
+  // C
+  let htmlC=SECTION_C.map((q,i)=>{
+    const sel=answers[`c-${i}`];
+    const ok=sel===q.correct;
+    return `<div class="review-item">
+      <div class="review-status ${sel===undefined?'skip':ok?'correct':'wrong'}">${sel===undefined?'?':ok?'✓':'✗'}</div>
+      <div class="review-item-text"><p>${i+1}. ${q.text}</p>
+      <div class="answer-info">${sel!==undefined?`Your answer: <strong>${labelsBC[sel]}) ${q.options[sel]}</strong> | `:'Not answered | '}Correct: <strong style="color:#0F8C5E">${labelsBC[q.correct]}) ${q.options[q.correct]}</strong></div></div>
+    </div>`;
+  }).join('');
+  document.getElementById('c-review-list').innerHTML=htmlC;
 }
 
-function buildWrittenReview() {
+function buildWrittenReview(){
   const items=[
-    {key:'q1',label:'Q1: Robot Steps Problem (8 marks)'},
-    {key:'q2',label:'Q2: Drone Height Problem (8 marks)'},
-    {key:'q4',label:'Q4: Water Wastage Solution (12 marks)'},
-    {key:'q5',label:'Q5: Entrepreneurial Thinking (12 marks)'},
-    {key:'q6',label:'Q6: Creative Innovation (12 marks)'},
-    {key:'q7',label:'Q7: Social Problem Solution (12 marks)'}
+    {key:'d1',label:'D1: Reduce Paper Waste (5 marks)'},
+    {key:'d2',label:'D2: School Robot Invention (5 marks)'},
+    {key:'d3',label:'D3: Traffic Technology Solution (5 marks)'},
+    {key:'e1',label:'E1: Robot Failure Scenario (5 marks)'},
+    {key:'e2',label:'E2: Team Disagreement Scenario (5 marks)'},
+    {key:'e3',label:'E3: Rs.10,000 Student Life Improvement (5 marks)'},
+    {key:'f1a',label:'F1a: Case Study - Key Problems (3 marks)'},
+    {key:'f1b',label:'F1b: Case Study - Causes (3 marks)'},
+    {key:'f1c',label:'F1c: Case Study - Tech Solutions (4 marks)'},
+    {key:'g1a',label:'G1a: Entrepreneurship - Problem (1 mark)'},
+    {key:'g1b',label:'G1b: Entrepreneurship - Information Needed (1 mark)'},
+    {key:'g1c',label:'G1c: Entrepreneurship - Solution (3 marks)'},
+    {key:'h1',label:'H1: Essay/Opinion (5 marks)'}
   ];
-  const html = items.map(w=>{
+  const html=items.map(w=>{
     const ans=answers[w.key];
     const has=ans?.trim().length>0;
     const words=has?ans.trim().split(/\s+/).length:0;
@@ -850,144 +805,129 @@ function buildWrittenReview() {
       </div>
     </div>`;
   }).join('');
-  document.getElementById('written-review-list').innerHTML = html;
+  document.getElementById('written-review-list').innerHTML=html;
 }
 
 /* ══════════════════════════════
    GOOGLE SHEETS SYNC
-   ─────────────────────────────
-   Sheet columns (in order):
-     Timestamp | Name | RollNo | Class | Date | TimeUsed
-     MCQ1 .. MCQ8 | MCQScore | MCQMax
-     Q1_Answer | Q1_Max
-     Q2_Answer | Q2_Max
-     Q4_Answer | Q4_Max
-     Q5_Answer | Q5_Max
-     Q6_Answer | Q6_Max
-     Q7_Answer | Q7_Max
-     GrandTotal | TotalMax | Percentage
-   ─────────────────────────────
-   Apps Script (deploy as Web App — Anyone can access):
-     function doPost(e) {
-       var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-       sheet.appendRow([
-         e.parameter.Timestamp, e.parameter.Name, e.parameter.RollNo,
-         e.parameter.Class, e.parameter.Date, e.parameter.TimeUsed,
-         e.parameter.MCQ1, e.parameter.MCQ2, e.parameter.MCQ3,
-         e.parameter.MCQ4, e.parameter.MCQ5, e.parameter.MCQ6,
-         e.parameter.MCQ7, e.parameter.MCQ8,
-         e.parameter.MCQScore, e.parameter.MCQMax,
-         e.parameter.Q1_Answer, e.parameter.Q1_Max,
-         e.parameter.Q2_Answer, e.parameter.Q2_Max,
-         e.parameter.Q4_Answer, e.parameter.Q4_Max,
-         e.parameter.Q5_Answer, e.parameter.Q5_Max,
-         e.parameter.Q6_Answer, e.parameter.Q6_Max,
-         e.parameter.Q7_Answer, e.parameter.Q7_Max,
-         e.parameter.GrandTotal, e.parameter.TotalMax, e.parameter.Percentage
-       ]);
-       return ContentService.createTextOutput('ok');
-     }
+   Column order in sheet:
+   Timestamp,Name,Roll no.,Class,Date,Time Used,
+   A1..A10,A Total,
+   B1..B10,B Total,
+   C1..C10,C Total  -- NOTE: sheet has B1-B10+BTotal then C1-C10+CTotal,
+                       but Section B has 20 questions & Section C has 10.
+                       We map B1-B10 -> first 10 B answers (correct/wrong),
+                       and reuse... see Apps Script note below for full handling.
+   D1-D3,D Total,
+   E1-E3,E Total,
+   F1A,F1B,F1C,F Total,
+   G1A,G1B,G1C,G Total,
+   H1,H Total
 ══════════════════════════════ */
-
-function getTimeUsed() {
-  if (!examStartTime) return '—';
-  const elapsed = Math.round((new Date() - examStartTime) / 1000);
-  const m = Math.floor(elapsed / 60), s = elapsed % 60;
+function getTimeUsed(){
+  if(!examStartTime) return '—';
+  const elapsed=Math.round((new Date()-examStartTime)/1000);
+  const m=Math.floor(elapsed/60), s=elapsed%60;
   return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 }
-
-async function autoSendOnSubmit() {
-  showSheetsStatus('Uploading to Google Sheets…', 'pending');
+async function sendToSheets(){
+  showSheetsStatus('Syncing to Google Sheets…','pending');
   await sendPayload();
 }
+async function sendPayload(){
+  const name=document.getElementById('field-name').value.trim();
+  const roll=document.getElementById('field-roll').value.trim();
+  const cls=document.getElementById('field-class').value.trim();
+  const dobVal=document.getElementById('field-dob').value;
+  const timeUsed=getTimeUsed();
+  const labels=['a','b','c','d'];
 
-async function sendToSheets() {
-  showSheetsStatus('Syncing to Google Sheets…', 'pending');
-  await sendPayload();
-}
-
-async function sendPayload() {
-  const name    = document.getElementById('field-name').value.trim();
-  const roll    = document.getElementById('field-roll').value.trim();
-  const cls     = document.getElementById('field-class').value.trim();
-  const dateVal = document.getElementById('field-date').value;
-  const timeUsed = getTimeUsed();
-
-  const mcqLabels = ['a','b','c','d'];
-  const mcqResults = MCQ_QUESTIONS.map((q, i) => {
-    const sel = answers[`mcq-${i}`];
-    if (sel === undefined) return 'Not Answered';
-    if (sel === q.correct)  return `Correct (${mcqLabels[sel]})`;
-    return `Wrong: ${mcqLabels[sel]}, Ans: ${mcqLabels[q.correct]}`;
-  });
-
-  const ans = (k) => {
-    const fromState = (answers[k] || '').trim();
-    if (fromState) return fromState.substring(0, 800);
-    const el = document.getElementById(`ans-${k}`);
-    return el ? el.value.trim().substring(0, 800) || '(No answer)' : '(No answer)';
-  };
-
-  const MAX = { q1: 8, q2: 8, q4: 12, q5: 12, q6: 12, q7: 12 };
-  const TOTAL_MAX = 80;
-
-  const wq1 = parseInt(document.getElementById('m-q1').value) || 0;
-  const wq2 = parseInt(document.getElementById('m-q2').value) || 0;
-  const wq4 = parseInt(document.getElementById('m-q4').value) || 0;
-  const wq5 = parseInt(document.getElementById('m-q5').value) || 0;
-  const wq6 = parseInt(document.getElementById('m-q6').value) || 0;
-  const wq7 = parseInt(document.getElementById('m-q7').value) || 0;
-  const grandTotal = mcqAutoScore + wq1 + wq2 + wq4 + wq5 + wq6 + wq7;
-  const pct = Math.round((grandTotal / TOTAL_MAX) * 100);
-
-  const p = new URLSearchParams();
+  const p=new URLSearchParams();
   p.append('Timestamp', new Date().toLocaleString('en-IN'));
-  p.append('Name',      name);
-  p.append('RollNo',    roll);
-  p.append('Class',     cls);
-  p.append('Date',      dateVal);
-  p.append('TimeUsed',  timeUsed);
+  p.append('Name', name);
+  p.append('RollNo', roll);
+  p.append('Class', cls);
+  p.append('DOB', dobVal);
+  p.append('TimeUsed', timeUsed);
 
-  mcqResults.forEach((r, i) => p.append(`MCQ${i + 1}`, r));
-  p.append('MCQScore', String(mcqAutoScore));
-  p.append('MCQMax',   '16');
+  // Section A: 1/0 per question (1=correct,0=wrong/blank)
+  let aTot=0;
+  SECTION_A.forEach((q,i)=>{
+    const sel=answers[`tf-${i}`];
+    const correctIdx=q.correct?0:1;
+    const val=(sel===correctIdx)?1:0;
+    aTot+=val;
+    p.append(`A${i+1}`, String(val));
+  });
+  p.append('ATotal', String(aTot));
 
-  p.append('Q1_Answer', ans('q1'));  p.append('Q1_Max', String(MAX.q1));
-  p.append('Q2_Answer', ans('q2'));  p.append('Q2_Max', String(MAX.q2));
-  p.append('Q4_Answer', ans('q4'));  p.append('Q4_Max', String(MAX.q4));
-  p.append('Q5_Answer', ans('q5'));  p.append('Q5_Max', String(MAX.q5));
-  p.append('Q6_Answer', ans('q6'));  p.append('Q6_Max', String(MAX.q6));
-  p.append('Q7_Answer', ans('q7'));  p.append('Q7_Max', String(MAX.q7));
+  // Section B: 20 questions, 2 marks each -> for sheet (B1-B10 + B Total),
+  // send mark per question as B1..B20 too, plus BTotal
+  let bTot=0;
+  SECTION_B.forEach((q,i)=>{
+    const sel=answers[`b-${i}`];
+    const val=(sel===q.correct)?2:0;
+    bTot+=val;
+    p.append(`B${i+1}`, String(val));
+  });
+  p.append('BTotal', String(bTot));
 
-  p.append('GrandTotal', String(grandTotal));
-  p.append('TotalMax',   String(TOTAL_MAX));
-  p.append('Percentage', `${pct}%`);
+  // Section C: 10 questions, 2 marks each
+  let cTot=0;
+  SECTION_C.forEach((q,i)=>{
+    const sel=answers[`c-${i}`];
+    const val=(sel===q.correct)?2:0;
+    cTot+=val;
+    p.append(`C${i+1}`, String(val));
+  });
+  p.append('CTotal', String(cTot));
 
-  try {
-    await fetch(SHEETS_URL, {
-      method: 'POST',
-      mode:   'no-cors',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body:   p.toString()
-    });
-    showSheetsStatus('✅ Uploaded to Google Sheets successfully.', 'ok');
-  } catch (err) {
-    showSheetsStatus('❌ Upload failed — check your network connection.', 'error');
+  // Section D: answers + total marks (from examiner)
+  ['d1','d2','d3'].forEach((k,i)=> p.append(`D${i+1}`, (answers[k]||'(No answer)').substring(0,800)));
+  p.append('DTotal', String(parseInt(document.getElementById('m-D').value)||0));
+
+  // Section E
+  ['e1','e2','e3'].forEach((k,i)=> p.append(`E${i+1}`, (answers[k]||'(No answer)').substring(0,800)));
+  p.append('ETotal', String(parseInt(document.getElementById('m-E').value)||0));
+
+  // Section F
+  p.append('F1A', (answers['f1a']||'(No answer)').substring(0,800));
+  p.append('F1B', (answers['f1b']||'(No answer)').substring(0,800));
+  p.append('F1C', (answers['f1c']||'(No answer)').substring(0,800));
+  p.append('FTotal', String(parseInt(document.getElementById('m-F').value)||0));
+
+  // Section G
+  p.append('G1A', (answers['g1a']||'(No answer)').substring(0,800));
+  p.append('G1B', (answers['g1b']||'(No answer)').substring(0,800));
+  p.append('G1C', (answers['g1c']||'(No answer)').substring(0,800));
+  p.append('GTotal', String(parseInt(document.getElementById('m-G').value)||0));
+
+  // Section H
+  p.append('H1', (answers['h1']||'(No answer)').substring(0,1200));
+  p.append('HTotal', String(parseInt(document.getElementById('m-H').value)||0));
+
+  const m=getMarks();
+  const grand=m.A+m.B+m.C+m.D+m.E+m.F+m.G+m.H;
+  p.append('GrandTotal', String(grand));
+  p.append('TotalMax','120');
+  p.append('Percentage', `${Math.round((grand/120)*100)}%`);
+
+  try{
+    await fetch(SHEETS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:p.toString()});
+    showSheetsStatus('✅ Uploaded to Google Sheets successfully.','ok');
+  }catch(err){
+    showSheetsStatus('❌ Upload failed — check your network connection.','error');
   }
 }
-
-function showSheetsStatus(msg, type) {
-  const box = document.getElementById('sheets-result-box');
+function showSheetsStatus(msg,type){
+  const box=document.getElementById('sheets-result-box');
   box.style.display='flex';
   box.className='sheets-result-box '+(type==='ok'?'':type==='error'?'error':'pending');
   document.getElementById('sheets-result-msg').textContent=msg;
 }
+function retakeExam(){location.reload();}
 
-function retakeExam() { location.reload(); }
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('field-date').valueAsDate = new Date();
-});
+document.addEventListener('DOMContentLoaded',()=>{});
 </script>
 </body>
 </html>
